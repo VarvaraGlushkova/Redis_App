@@ -1,4 +1,4 @@
 class Answer < ApplicationRecord
-  belongs_to :Task
-  has_many :Comments
+  belongs_to :task
+  has_many :comments
 end
