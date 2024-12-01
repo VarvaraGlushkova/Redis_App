@@ -6,8 +6,8 @@ def seed
   reset_db
   # create_users(10)
   create_task(30)
-  create_answer(70)
-  create_comment(40)
+  create_answer(20)
+  create_comment(10)
 end
 
 def reset_db
@@ -46,6 +46,18 @@ def create_text
   textn = text_n.join(' ').capitalize + '.'
 end
 
+
+def upload_random_taskimg
+  uploader = TaskImageUploader.new(Task.new, :image)
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/autoupload/taskimg", "*")).sample))
+  uploader
+end
+
+def upload_random_answerimg
+  uploader = AnswerImgUploader.new(Answer.new, :answer_img)
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/autoupload/answerimg", "*")).sample))
+  uploader
+end
 # def upload_random_cover
 #   uploader = CoverUploader.new(Story.new, :cover)
 #   uploader.cache!(File.open(Dir.glob(File.join(Rails.root, "public/autoupload/covers", "*")).sample))
@@ -56,7 +68,7 @@ end
 def create_task(quantity)
   quantity.times do
     # user = User.all.sample
-    task = Task.create(name: create_title, descroption: create_description, image: create_title)
+    task = Task.create(name: create_title, descroption: create_description, image: upload_random_taskimg)
     puts "Task with id #{task.id} and title #{task.name} was made!"
   end
 end
@@ -78,7 +90,7 @@ def create_answer(quantity)
       answer = Answer.create!(
         user_name: create_title,
         description: create_description,
-        answer_img: create_title,
+        answer_img: upload_random_answerimg,
 
         task_id: task.id,
 
@@ -88,7 +100,7 @@ def create_answer(quantity)
   end
 end
 
-def create_comment
+def create_comment(quantity)
   answers = Answer.all
 
   puts answers
@@ -104,7 +116,6 @@ def create_comment
       comment = Comment.create!(
         user_name_title: create_title,
         body_content: create_description,
-        answer_img: create_title,
         answer_id: answer.id,
 
       )
@@ -112,3 +123,6 @@ def create_comment
     end
   end
 end
+
+
+seed

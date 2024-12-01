@@ -9,9 +9,10 @@
     <%= task.descroption %>
   </p>
 
-  <p>
-    <strong>Image:</strong>
-    <%= task.image %>
-  </p>
+  <div>
+
+   <%= image_tag task.image.url, height: 300 %>
+
+  </div>
 
 </div>

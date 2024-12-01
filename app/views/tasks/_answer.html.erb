@@ -9,9 +9,10 @@
     <%= answer.description %>
   </p>
 
-  <p>
-    <strong>Answer img:</strong>
-    <%= answer.answer_img %>
-  </p>
+  <div>
+
+   <%= image_tag answer.answer_img.url, height: 300 %>
+
+  </div>
 
 </div>
