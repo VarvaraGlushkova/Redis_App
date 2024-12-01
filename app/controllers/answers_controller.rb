@@ -12,8 +12,10 @@ class AnswersController < ApplicationController
 
   # GET /answers/new
   def new
+    @task = Task.find(params[:task_id])
     @answer = Answer.new(task_id: params[:task_id])
   end
+
 
   # GET /answers/1/edit
   def edit

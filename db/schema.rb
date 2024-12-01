@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_01_133250) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_01_151036) do
   create_table "answers", force: :cascade do |t|
     t.string "user_name"
     t.string "description"
@@ -25,6 +25,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_01_133250) do
     t.text "body_content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "answer_id", null: false
+    t.index ["answer_id"], name: "index_comments_on_answer_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -39,4 +41,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_01_133250) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "comments", "answers"
 end

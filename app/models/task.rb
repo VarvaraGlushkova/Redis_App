@@ -1,3 +1,3 @@
 class Task < ApplicationRecord
-  has_many :Answers
+  has_many :answers
 end
