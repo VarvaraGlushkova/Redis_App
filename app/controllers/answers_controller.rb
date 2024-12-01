@@ -21,7 +21,8 @@ class AnswersController < ApplicationController
 
   # POST /answers or /answers.json
   def create
-    @answer = Answer.new(answer_params)
+    @task = Task.find(params[:task_id])
+    @answer = @task.answers.new(answer_params)
 
     respond_to do |format|
       if @answer.save
