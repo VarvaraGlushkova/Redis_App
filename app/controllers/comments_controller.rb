@@ -21,7 +21,10 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    @comment = Comment.new(comment_params)
+    @answer = Answer.find(params[:answer_id])
+
+    @comment = @answer.comments.create(params[:comment].permit(:user_name_title, :body_content))
+    redirect_to answer_path(@answer)
 
     respond_to do |format|
       if @comment.save
@@ -65,6 +68,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:user_name_title)
+      params.require(:comment).permit(:user_name_title, :body_content)
     end
 end

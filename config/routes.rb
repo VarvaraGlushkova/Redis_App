@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :tasks do
     resources :answers
-    resources :comments
   end
 
   resources :answers do

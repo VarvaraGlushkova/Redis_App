@@ -8,3 +8,21 @@
 
   <%= button_to "Destroy this answer", @answer, method: :delete %>
 </div>
+
+<h2>Add a comment:</h2>
+
+<%= form_for([@answer, @answer.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.label :user_name_title %><br />
+    <%= f.text_field :body_content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -12,7 +12,7 @@ class AnswersController < ApplicationController
 
   # GET /answers/new
   def new
-    @answer = Answer.new
+    @answer = Answer.new(task_id: params[:task_id])
   end
 
   # GET /answers/1/edit
@@ -65,6 +65,6 @@ class AnswersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def answer_params
-      params.require(:answer).permit(:user_name, :description, :answer_img)
+      params.require(:answer).permit(:user_name, :description, :answer_img, :task_id)
     end
 end

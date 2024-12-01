@@ -8,3 +8,13 @@
 
   <%= button_to "Destroy this task", @task, method: :delete %>
 </div>
+
+<br>
+<br>
+
+<div>
+  <%= link_to "Добавить редиску", new_task_answer_path(task_id: @task.id) %>
+</div>
+
+
+
