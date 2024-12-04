@@ -3,11 +3,13 @@
 
 <%= render 'application/menubar'%>
 
+<div class="O_TaskCardS">
+  <%= render @task %>
+  <%= link_to "Edit this task", edit_task_path(@task) %>
+</div>
 
-<%= render @task %>
 
 <div>
-  <%= link_to "Edit this task", edit_task_path(@task) %> |
   <%= link_to "Back to tasks", tasks_path %>
 
   <%= button_to "Destroy this task", @task, method: :delete %>
@@ -17,12 +19,11 @@
 <br>
 
 <div>
-  <%= link_to "Добавить редиску", new_task_answer_path(task_id: @task.id) %>
+  <%= link_to "Добавить редизку", new_task_answer_path(task_id: @task.id) %>
 </div>
 
 
 
-<h2>Answers</h2>
 
 <div id="answers">
   <% @task.answers.each do |answer| %>

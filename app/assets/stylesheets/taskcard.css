@@ -1,0 +1,91 @@
+.A_TaskTitle {
+    color: #FFF;
+    font-family: "Golos";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+.A_TaskText {
+
+    width: 398px;
+    color: #FFF;
+    font-family: "Golos";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+            line-clamp: 4; 
+    -webkit-box-orient: vertical;
+
+    margin-bottom: 130px;
+}
+
+.O_TaskCardM {
+    width: fit-content;
+    width: 1349px;
+    
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 auto;
+
+    margin-bottom: 45px;
+    
+    background: #2E2E2E;
+}
+
+.O_TaskCardS {
+    width: fit-content;
+    width: 1349px;
+    
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    margin-bottom: 45px;
+    
+    background: #2E2E2E;
+
+    .O_TaskCardM {
+        margin-bottom: 0px;
+    }
+}
+
+.M_TaskTxtContent {
+    padding: 20px 20px 20px;
+    width: 390px;
+    margin-right: 52px;
+
+    a {
+        margin-top: 100px;
+
+        color: #FFF;
+        text-decoration: none;
+
+        font-family: "Golos";
+
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+}
+
+.A_TaskImg {
+    overflow: hidden;
+    height: 337px;
+    width: 867px;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+}

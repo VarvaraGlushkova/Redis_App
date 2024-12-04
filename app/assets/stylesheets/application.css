@@ -1,11 +1,8 @@
 /*
- * 
- *
- *= require_tree .
- *= require_self
-
  *= require reset
  *= require basics
- *= require menubar
  *= require fonts
+
+ *= require menubar
+ *= require taskcard
  */

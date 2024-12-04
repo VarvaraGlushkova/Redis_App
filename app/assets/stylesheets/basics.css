@@ -1,5 +1,15 @@
 body {
-    font-family: "BricolageGrotesque";
-    size: 22px;
-    margin: 80px;
+    font-family: "Golos";
+    size: 20px;
+    margin: 24px 80px;
+
+    background-color: #202020;
+
 }
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+

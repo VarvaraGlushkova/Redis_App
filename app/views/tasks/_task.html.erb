@@ -1,18 +1,22 @@
-<div id="<%= dom_id task %>">
-  <p>
-    <strong>Name:</strong>
-    <%= task.name %>
-  </p>
+<div id="<%= dom_id task %>" class="O_TaskCardM">
 
-  <p>
-    <strong>Descroption:</strong>
-    <%= task.descroption %>
-  </p>
+  <div class="M_TaskTxtContent">
 
-  <div>
+    <h2 class="A_TaskTitle">
+      <%= task.name %>
+    </h2>
 
+    <p class="A_TaskText">
+      <%= task.descroption %>
+    </p>
+
+    <%= link_to "Посмотреть", task %>
+
+  </div>
+
+
+  <div class="A_TaskImg">
    <%= image_tag task.image.url, height: 300 %>
-
   </div>
 
 </div>
