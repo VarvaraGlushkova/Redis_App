@@ -28,4 +28,10 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  <div id="comments">
+  <% @answer.comments.each do |comment| %>
+    <%= render comment %>
+  <% end %>
+  </div>
 <% end %>
