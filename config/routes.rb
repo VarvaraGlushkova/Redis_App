@@ -6,6 +6,25 @@ Rails.application.routes.draw do
   resources :answers do
     resources :comments
   end
+
+
+  # API V1 version, fixing process
+  namespace :api, format: "json" do
+    namespace :v1 do
+      resources :tasks, only: [ :index, :show ]
+      resources :answers, only: [ :index, :show ]
+    end
+  end
+
+  #
+
+
+
+
+
+
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
