@@ -8,6 +8,13 @@
     font-family: 'Golos';
     font-weight: 500;
     font-size: 20px;
+
+    .M_LoginSets {
+        a {
+            margin: 20px;
+        }
+
+    }
     
 
     a {

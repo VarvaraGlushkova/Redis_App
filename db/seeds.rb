@@ -4,7 +4,7 @@
 
 def seed
   reset_db
-  # create_users(10)
+  create_users(10)
   create_task(30)
   create_answer(20)
   create_comment(10)
@@ -14,6 +14,27 @@ def reset_db
   Rake::Task['db:drop'].invoke
   Rake::Task['db:create'].invoke
   Rake::Task['db:migrate'].invoke
+end
+
+
+def create_users(quantity)
+  i = 0
+
+  quantity.times do
+    user_data = {
+      email: "redis_#{i}@email.com",
+      password: 'testtest'
+    }
+
+    if i == 7
+      user_data[:admin] = true
+    end
+
+    user = User.create!(user_data)
+    puts "User created with id #{user.id}"
+
+    i += 1
+  end
 end
 
 def create_title

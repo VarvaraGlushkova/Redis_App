@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :tasks do
     resources :answers
   end
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
   resources :answers do
     resources :comments
   end
+
+  # LOGIN AND AUTHORISE
 
 
   # API V1 version, fixing process
