@@ -1,19 +1,19 @@
 .A_TaskTitle {
     color: #FFF;
     font-family: "Golos";
-    font-size: 36px;
+    font-size: 1.8rem;
     font-style: normal;
     font-weight: 700;
 
-    margin-bottom: 20px;
+    margin-bottom: 1.04vw;
 }
 
 .A_TaskText {
 
-    width: 398px;
+    width: 20.73vw;
     color: #FFF;
     font-family: "Golos";
-    font-size: 22px;
+    font-size: 1.1rem;
     font-style: normal;
     font-weight: 500;
 
@@ -23,55 +23,60 @@
             line-clamp: 4; 
     -webkit-box-orient: vertical;
 
-    margin-bottom: 130px;
+    margin-bottom: 6.77vw;
 }
 
 .O_TaskCardM {
     width: fit-content;
-    width: 1349px;
+    width: 70.26vw;
     
     display: flex;
     flex-direction: row;
 
     margin: 0 auto;
 
-    margin-bottom: 45px;
+    margin-bottom: 2.34vw;
     
     background: #2E2E2E;
 }
 
 .O_TaskCardS {
     width: fit-content;
-    width: 1349px;
+    width: 70.26vw;
     
     display: flex;
     flex-direction: column;
 
     margin: 0 auto;
 
-    margin-bottom: 45px;
+    margin-bottom: 2.34vw;
     
     background: #2E2E2E;
 
     .O_TaskCardM {
         margin-bottom: 0px;
     }
+
+    a {
+        margin: 0 auto;
+        margin-bottom: 1.04vw;
+    }
 }
 
 .M_TaskTxtContent {
-    padding: 20px 20px 20px;
-    width: 390px;
-    margin-right: 52px;
+    padding: 1.04vw 1.04vw 1.04vw;
+    width: 20.31vw;
+    margin-right: 2.71vw;
 
     a {
-        margin-top: 100px;
+        margin-top: 5.21vw;
 
         color: #FFF;
         text-decoration: none;
 
         font-family: "Golos";
 
-        font-size: 15px;
+        font-size: 0.75rem;
         font-style: normal;
         font-weight: 700;
     }
@@ -80,8 +85,8 @@
 
 .A_TaskImg {
     overflow: hidden;
-    height: 337px;
-    width: 867px;
+    height: 17.55vw;
+    width: 45.16vw;
 
     img {
         object-fit: cover;

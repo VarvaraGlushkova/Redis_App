@@ -1,5 +1,6 @@
 body {
     font-family: "Golos";
+    color: white;
     size: 20px;
     margin: 24px 80px;
 
@@ -13,3 +14,16 @@ a {
 }
 
 
+.W_TaskAnswers {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 1.04vw;
+    grid-row-gap: 1.56vw;
+
+    .C_AnswerCard {
+        .M_AnswerTXT{
+            display: none;
+        }
+    }
+}
