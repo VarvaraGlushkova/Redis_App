@@ -1,10 +1,14 @@
 @fill_txt = "Bionore and Aden had been friends for what felt like an eternity. They met in college, bonding over late-night pizza and study sessions. Over time, their friendship evolved into something more... casual. They both agreed on a friends-with-benefits arrangement, and it seemed like the perfect solution. No strings attached, no drama, just fun. As the months went by, Aden found himself growing more and more attached to Bionore. He couldn't quite put his finger on when it started, but he remembered the way his heart skipped a beat when she smiled at him, the way his hands itched to touch her whenever she was near. He tried to brush it off as mere infatuation, but deep down, he knew it was something more."
 
+@theme_name = [ "fonts", "furniture", "branding", "merch", "logo", "navigation" ]
+
+
 @words = @fill_txt.downcase.gsub(/[-.—,':()]/, '').gsub(/  /, ' ').split(' ')
 
 def seed
   reset_db
   create_users(10)
+  create_theme(5)
   create_task(30)
   create_answer(20)
   create_comment(10)
@@ -26,9 +30,9 @@ def create_users(quantity)
       password: 'testtest'
     }
 
-    if i == 7
-      user_data[:admin] = true
-    end
+    # if i == 7
+    #   user_data[:admin] = true
+    # end
 
     user = User.create!(user_data)
     puts "User created with id #{user.id}"
@@ -45,6 +49,10 @@ def create_title
   end
 
   titlename = title_n.join(' ').capitalize + '.'
+end
+
+def create_theme_title
+  @theme_name.sample
 end
 
 def create_description
@@ -142,6 +150,19 @@ def create_comment(quantity)
       )
       puts "Comment with id #{comment.id} was made for Answer with id #{answer.id}"
     end
+  end
+end
+
+def create_theme (quantity)
+  quantity.times do
+    theme = Theme.create(
+      theme_title: create_theme_title,
+      theme_descr: create_description
+    )
+
+    theme.save!
+
+    puts "Theme with name #{theme.theme_title} was created"
   end
 end
 
