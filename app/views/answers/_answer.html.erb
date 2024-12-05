@@ -1,19 +1,41 @@
-<div id="<%= dom_id answer %>">
-  <p>
-    <strong>User name:</strong>
-    <%= answer.user_name %>
-  </p>
+<div id="<%= dom_id answer %>" class="C_AnswerCard">
 
-  <p>
-    <strong>Description:</strong>
-    <%= answer.description %>
-  </p>
+  <div class="M_AnswerTXT">
+    <p>
+      <%= answer.user_name %>
+    </p>
 
-  <div>
+    <p>
+      <%= answer.description %>
+    </p>
 
-   <%= image_tag answer.answer_img.url, height: 300 %>
 
   </div>
+
+  <div class="C_AnswerContent">
+
+    <div class="M_AnswerTopC">
+      <div class="A_AnswerProfile">
+             <%= link_to "Show this answer", answer %>
+      </div>
+
+      <div class="A_AnswerTheme">
+
+      </div>
+    </div>
+
+
+
+
+    <div class="A_AnswerImg">
+
+    <%= image_tag answer.answer_img.url, height: 300 %>
+
+    </div>
+  </div>
+
+
+
  
 
 

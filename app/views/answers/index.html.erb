@@ -6,12 +6,9 @@
 
 <h1>Answers</h1>
 
-<div id="answers">
+<div id="answers" class="W_Answers">
   <% @answers.each do |answer| %>
     <%= render answer %>
-    <p>
-      <%= link_to "Show this answer", answer %>
-    </p>
   <% end %>
 </div>
 

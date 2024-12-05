@@ -1,0 +1,96 @@
+.A_TaskTitle {
+    color: #FFF;
+    font-family: "Golos";
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 700;
+
+    margin-bottom: 1.04vw;
+}
+
+.A_TaskText {
+
+    width: 20.73vw;
+    color: #FFF;
+    font-family: "Golos";
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 500;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+            line-clamp: 4; 
+    -webkit-box-orient: vertical;
+
+    margin-bottom: 6.77vw;
+}
+
+.O_TaskCardM {
+    width: fit-content;
+    width: 70.26vw;
+    
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 auto;
+
+    margin-bottom: 2.34vw;
+    
+    background: #2E2E2E;
+}
+
+.O_TaskCardS {
+    width: fit-content;
+    width: 70.26vw;
+    
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    margin-bottom: 2.34vw;
+    
+    background: #2E2E2E;
+
+    .O_TaskCardM {
+        margin-bottom: 0px;
+    }
+
+    a {
+        margin: 0 auto;
+        margin-bottom: 1.04vw;
+    }
+}
+
+.M_TaskTxtContent {
+    padding: 1.04vw 1.04vw 1.04vw;
+    width: 20.31vw;
+    margin-right: 2.71vw;
+
+    a {
+        margin-top: 5.21vw;
+
+        color: #FFF;
+        text-decoration: none;
+
+        font-family: "Golos";
+
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+}
+
+.A_TaskImg {
+    overflow: hidden;
+    height: 17.55vw;
+    width: 45.16vw;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+}

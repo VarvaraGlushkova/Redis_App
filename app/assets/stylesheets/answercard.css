@@ -1,0 +1,57 @@
+.W_Answers {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 1.04vw;
+    grid-row-gap: 1.56vw;
+}
+
+
+
+.C_AnswerCard {
+    overflow: hidden;
+    grid-column: span 2;
+
+    width: 27.5vw;
+    height: 21.41vw;
+    background: #2E2E2E;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.C_AnswerContent {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    .M_AnswerTopC {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.M_AnswerTXT {
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.A_AnswerTheme {
+    width: 5.47vw;
+    height: 2.6vw;
+    background-color: #EC2351;
+}
+
+.A_AnswerImg {
+    width: 25.42vw;
+    height: 12.24vw;
+    margin: 0 auto;
+    
+
+    img {
+        object-fit: cover;
+        width: 100%;
+    }
+}
