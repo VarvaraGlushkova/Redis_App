@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :subscriptions
   devise_for :users
+
   resources :tasks do
     resources :answers
   end
