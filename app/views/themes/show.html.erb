@@ -2,9 +2,13 @@
 
 <%= render @theme %>
 
-<div>
-  <%= link_to "Edit this theme", edit_theme_path(@theme) %> |
-  <%= link_to "Back to themes", themes_path %>
 
-  <%= button_to "Destroy this theme", @theme, method: :delete %>
+
+<div class="C_Theme_Tasks">
+  <div id="tasks" class="O_TaskCardS">
+    <% @theme.tasks.each do |task| %>
+      <%= render task %>
+    <% end %>
+  </div>
 </div>
+

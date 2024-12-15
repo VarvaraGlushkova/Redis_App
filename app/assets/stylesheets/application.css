@@ -8,4 +8,6 @@
  *= require footer
  *= require taskcard
  *= require answercard
+ *= require theme
+ *= require blog
  */

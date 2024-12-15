@@ -1,12 +1,20 @@
-<div id="<%= dom_id theme %>">
-  <p>
-    <strong>Theme title:</strong>
-    <%= theme.theme_title %>
-  </p>
+<div id="<%= dom_id theme %>" class="O_Theme_CardM">
 
-  <p>
-    <strong>Theme descr:</strong>
-    <%= theme.theme_descr %>
-  </p>
+
+<h1>
+  <%= link_to theme.theme_title, theme %>
+</h1>
+
+
+  <%# <%= link_to "Edit this theme", edit_theme_path(@theme) %> 
+  <%# <%= link_to "Back to themes", themes_path %>
+
+
+
+
+
+
+
+
 
 </div>

@@ -2,7 +2,15 @@
 
 <% content_for :title, "Posts" %>
 
-<h1>Posts</h1>
+<div class="M_Blog_Cover">
+  <h1>Наш блог!</h1>
+</div>
+
+<%= link_to "New post", new_post_path %>
+
+<br>
+<br>
+
 
 <div id="posts">
   <% @posts.each do |post| %>
@@ -13,4 +21,4 @@
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
+
