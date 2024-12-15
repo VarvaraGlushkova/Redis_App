@@ -1,0 +1,16 @@
+
+:root {
+/* main color styles */
+    --redis_red: #a2062f;
+    --keks_na_ogorode: #C7D83D;
+    --chernozem: #211F20;
+    --disco_sneg: #EEF1FF;
+    --vitamin_pink: #e01067;
+
+/* interface colors */
+    --txt_input: #CDCDCD;    
+    --inactive: #5F5F5F;    
+    --hover: #EC9CC2;    
+    --card_hover: #333031;    
+    --button_hover: #F2FF89;    
+}

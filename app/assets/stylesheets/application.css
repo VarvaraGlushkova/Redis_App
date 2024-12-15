@@ -2,8 +2,10 @@
  *= require reset
  *= require basics
  *= require fonts
+ *= require variables
 
  *= require menubar
+ *= require footer
  *= require taskcard
  *= require answercard
  */
