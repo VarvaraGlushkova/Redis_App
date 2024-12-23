@@ -25,6 +25,7 @@ class AnswersController < ApplicationController
   def create
     @task = Task.find(params[:task_id])
     @answer = @task.answers.new(answer_params)
+    @answer.user_id = current_user
 
     respond_to do |format|
       if @answer.save

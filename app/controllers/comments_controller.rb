@@ -24,6 +24,7 @@ class CommentsController < ApplicationController
     @answer = Answer.find(params[:answer_id])
 
     @comment = @answer.comments.create(params[:comment].permit(:user_name_title, :body_content))
+    @comment.use_id = current_user
 
 
     respond_to do |format|

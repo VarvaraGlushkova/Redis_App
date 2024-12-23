@@ -9,6 +9,7 @@ class TasksController < ApplicationController
   # GET /tasks/1 or /tasks/1.json
   def show
     @task = Task.find(params[:id])
+    @answers = @task.answers.order(created_at: :desc)
   end
 
   # GET /tasks/new
@@ -22,7 +23,9 @@ class TasksController < ApplicationController
 
   # POST /tasks or /tasks.json
   def create
-    @task = current_user.tasks.new(task_params)
+    @theme = Theme.find(params[:theme_id])
+    @task = @theme.tasks.new(task_params)
+    @task.user_id = current_user
 
     respond_to do |format|
       if @task.save
