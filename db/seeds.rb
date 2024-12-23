@@ -10,9 +10,9 @@
 def seed
   reset_db
   create_users(10)
-  create_theme(5)
+  create_theme(6)
   create_task(30)
-  create_answer(20)
+  create_answer(10)
   create_comment(10)
 end
 
@@ -109,12 +109,15 @@ def create_task(quantity)
   themes.each do |theme|
     task_count = quantity
     task_count.times do |i|
+      user = User.all.sample
       task = Task.create!(
         name: create_title,
         descroption: create_description,
         image: upload_random_taskimg,
 
+
         theme_id: theme.id,
+        user_id: user.id
 
       )
       puts "Task with id #{task.id} was made for Theme with id #{theme.theme_title}"
@@ -143,12 +146,14 @@ def create_answer(quantity)
   tasks.each do |task|
     answer_count = quantity
     answer_count.times do |i|
+      user = User.all.sample
       answer = Answer.create!(
         user_name: create_title,
         description: create_description,
         answer_img: upload_random_answerimg,
 
         task_id: task.id,
+        user_id: user.id
 
       )
       puts "Answer with id #{answer.id} was made for Task with id #{task.id}"
@@ -169,10 +174,12 @@ def create_comment(quantity)
   answers.each do |answer|
     comment_count = quantity
     comment_count.times do |i|
+      user = User.all.sample
       comment = Comment.create!(
         user_name_title: create_title,
         body_content: @comment_text.sample,
         answer_id: answer.id,
+        user_id: user.id
 
       )
       puts "Comment with id #{comment.id} was made for Answer with id #{answer.id}"
