@@ -18,7 +18,9 @@
 <br>
 
 <div>
-  <%= link_to "Добавить редизку", new_task_answer_path(task_id: @task.id) %>
+  <% if user_signed_in? %>
+    <%= link_to "Добавить редизку", new_task_answer_path(task_id: @task.id) %>
+  <%end%>
 </div>
 
 
