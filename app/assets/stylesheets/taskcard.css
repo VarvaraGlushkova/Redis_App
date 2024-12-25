@@ -1,5 +1,5 @@
 .A_TaskTitle {
-    color: #FFF;
+    color: var(--disco_sneg);
     font-family: "Golos";
     font-size: 1.8rem;
     font-style: normal;
@@ -11,7 +11,7 @@
 .A_TaskText {
 
     width: 20.73vw;
-    color: #FFF;
+    color: var(--disco_sneg);
     font-family: "Golos";
     font-size: 1.1rem;
     font-style: normal;
@@ -37,7 +37,7 @@
 
     margin-bottom: 2.34vw;
     
-    background: #2E2E2E;
+    background: var(--chernozem);
 }
 
 .O_TaskCardS {
@@ -51,7 +51,7 @@
 
     margin-bottom: 2.34vw;
     
-    background: #2E2E2E;
+    background: var(--chernozem);
 
     .O_TaskCardM {
         margin-bottom: 0px;
@@ -71,7 +71,7 @@
     a {
         margin-top: 5.21vw;
 
-        color: #FFF;
+        color: var(--disco_sneg);
         text-decoration: none;
 
         font-family: "Golos";

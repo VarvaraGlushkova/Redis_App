@@ -1,0 +1,11 @@
+.M_Blog_Cover {
+    overflow: hidden;
+    width: 1760px;
+    height: 464px;    
+    background: linear-gradient(178deg, #A2062F -4.63%, #E01067 43.16%, #211F20 85.79%);
+
+    h1 {
+        position: relative;
+        padding-top: 10%;
+    }
+}

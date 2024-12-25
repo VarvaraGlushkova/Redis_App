@@ -36,6 +36,8 @@ gem "letter_opener"
 # LOGIN AND AUTHORISE GEM
 gem "devise"
 
+gem "cancancan"
+
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,0 +1,59 @@
+.W_Footer {
+    margin-top: 3.5rem;
+}
+
+.A_Divider {
+    width: 100%;
+    height: 0.05rem;
+    background-color: var(--disco_sneg);
+}
+
+.M_Infoblock {
+    margin-top: 2.4rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10rem;
+
+}
+
+.A_Made_By, .A_Curated_By {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    h4 {
+        margin-bottom: 1.6rem;
+
+    }
+}
+
+.A_Smm {
+    display: flex;
+    flex-direction: column;  
+    gap: 0.9rem;
+    
+    h4 {
+        margin-bottom: 0.9rem;
+    }
+}
+
+.Telegram, .Git {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    img {
+        height: 2.2rem;
+        width: 2.2rem;
+    }
+
+}
+
+h3 {
+    color: var(--Disco-Sneg, #EEF1FF);
+    font-family: "Golos";
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 800;
+    margin-left: 28.13vw;
+}

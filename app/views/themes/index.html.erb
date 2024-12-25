@@ -2,17 +2,14 @@
 
 <% content_for :title, "Themes" %>
 
-    <%= render 'application/menubar'%>
 
-<h1>Themes</h1>
+<div id="themes" class="C_Themes">
+  
+    <% @themes.each do |theme| %>
+      <%= render theme %>
+    <% end %>
 
-<div id="themes">
-  <% @themes.each do |theme| %>
-    <%= render theme %>
-    <p>
-      <%= link_to "Show this theme", theme %>
-    </p>
-  <% end %>
+
 </div>
 
-<%= link_to "New theme", new_theme_path %>
+<%#= link_to "New theme", new_theme_path %>

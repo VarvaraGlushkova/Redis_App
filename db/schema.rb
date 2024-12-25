@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_05_124845) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_23_193334) do
   create_table "answers", force: :cascade do |t|
     t.string "user_name"
     t.string "description"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_124845) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "task_id"
+    t.integer "user_id"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -26,6 +27,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_124845) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "answer_id", null: false
+    t.integer "user_id"
     t.index ["answer_id"], name: "index_comments_on_answer_id"
   end
 
@@ -48,6 +50,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_124845) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "theme_id", null: false
+    t.integer "user_id"
+    t.index ["theme_id"], name: "index_tasks_on_theme_id"
   end
 
   create_table "themes", force: :cascade do |t|
@@ -55,6 +60,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_124845) do
     t.string "theme_descr"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "theme_cover"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,6 +71,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_124845) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -75,4 +82,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_05_124845) do
   end
 
   add_foreign_key "comments", "answers"
+  add_foreign_key "tasks", "themes"
 end

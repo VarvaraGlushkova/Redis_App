@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  load_and_authorize_resource
   before_action :set_answer, only: %i[ show edit update destroy ]
 
   # GET /answers or /answers.json
@@ -25,6 +26,7 @@ class AnswersController < ApplicationController
   def create
     @task = Task.find(params[:task_id])
     @answer = @task.answers.new(answer_params)
+    @answer.user_id = current_user
 
     respond_to do |format|
       if @answer.save
@@ -68,6 +70,6 @@ class AnswersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def answer_params
-      params.require(:answer).permit(:user_name, :description, :answer_img, :task_id)
+      params.require(:answer).permit(:user_name, :description, :answer_img, :task_id, :user_id)
     end
 end

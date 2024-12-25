@@ -1,0 +1,43 @@
+.C_Theme_Tasks {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.O_Theme_CardM {
+    width: 1760px;
+    height: 464px;
+    overflow: hidden;
+
+    background:  linear-gradient(186deg, #C7D83D 4.4%, #E01067 44.63%, #211F20 84.11%);
+
+    h1 {
+        padding-top: 11rem;
+
+    }
+}
+
+
+.C_Themes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 60px;
+
+    .O_Theme_CardM {
+        grid-column: span 1;
+        width: 869px;
+        height: 464px;
+
+        background: linear-gradient(186deg, #C7D83D 4.4%, #E01067 44.63%, #211F20 84.11%);
+
+        h1 {
+            font-size: 10rem;
+
+            a:hover {
+                color: var(--button_hover);
+            }
+        }
+    }
+}

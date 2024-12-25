@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  load_and_authorize_resource
   before_action :set_task, only: %i[ show edit update destroy ]
 
   # GET /tasks or /tasks.json
@@ -9,6 +10,7 @@ class TasksController < ApplicationController
   # GET /tasks/1 or /tasks/1.json
   def show
     @task = Task.find(params[:id])
+    @answers = @task.answers.order(created_at: :desc)
   end
 
   # GET /tasks/new
@@ -22,7 +24,9 @@ class TasksController < ApplicationController
 
   # POST /tasks or /tasks.json
   def create
-    @task = Task.new(task_params)
+    @theme = Theme.find(params[:theme_id])
+    @task = @theme.tasks.new(task_params)
+    @task.user_id = current_user
 
     respond_to do |format|
       if @task.save
@@ -66,6 +70,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:name, :descroption, :image)
+      params.require(:task).permit(:name, :descroption, :image, :theme_id, :user_id)
     end
 end

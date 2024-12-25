@@ -1,16 +1,45 @@
 body {
     font-family: "Golos";
-    color: white;
-    size: 20px;
+    color: var(--disco_sneg);
+    size: 1.2rem;
     margin: 24px 80px;
 
-    background-color: #202020;
+    background-color: var(--chernozem);
 
 }
 
+h1 {
+  color: var(--disco_sneg, #EEF1FF);
+  font-family: "Golos";
+  font-size: 17rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+h2 {
+  color: var(--Disco-Sneg, #EEF1FF);
+  font-family: "Golos Text";
+  font-size: 10rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 800;
+  font-family: "Golos";
+  color: var(--disco_sneg);
+}
+
 a {
-    color: white;
+    color: var(--disco_sneg);
     text-decoration: none;
+}
+
+a:hover {
+  color: var(--hover);
+  text-decoration: none;
 }
 
 
@@ -18,8 +47,8 @@ a {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 1.04vw;
-    grid-row-gap: 1.56vw;
+    grid-column-gap: 20px;
+    grid-row-gap: 36px;
 
     .C_AnswerCard {
         .M_AnswerTXT{
@@ -27,3 +56,106 @@ a {
         }
     }
 }
+
+.shake-vertical {
+	-webkit-animation: shake-vertical 8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+	        animation: shake-vertical 8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;
+}
+.shake-vertical2 {
+	-webkit-animation: shake-vertical2 8s cubic-bezier(0.455, 0.030, 0.515, 0.955) -2s infinite both;
+	        animation: shake-vertical2 8s cubic-bezier(0.455, 0.030, 0.515, 0.955) -2s infinite both;
+}
+
+.M_Banner {
+    width: 91.61vw;
+    height: 32.4vw;
+    overflow: hidden;
+    position: relative;
+
+    .A_Banner_Shirt1 {
+        margin-left: -10%;
+        img {
+            position: absolute;
+        }
+    }
+
+    .A_Banner_Shirt2 {
+        margin-left: 58%;
+        img {
+            position: absolute;
+        }
+    }
+
+    img {
+      object-fit: cover;
+    }
+
+
+    /* .A_Banner_Shirts:nth-child(1){
+        margin-left: -10%;
+    }
+
+    .A_Banner_Shirts:nth-child(2){
+        margin-left: 58%;
+    } */
+
+}
+
+
+@-webkit-keyframes shake-vertical {
+    0%,
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateY(-8px);
+              transform: translateY(-8px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateY(8px);
+              transform: translateY(8px);
+    }
+    80% {
+      -webkit-transform: translateY(6.4px);
+              transform: translateY(6.4px);
+    }
+    90% {
+      -webkit-transform: translateY(-6.4px);
+              transform: translateY(-6.4px);
+    }
+  }
+  @keyframes shake-vertical2 {
+    0%,
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateY(-10px);
+              transform: translateY(-10px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateY(10px);
+              transform: translateY(10px);
+    }
+    80% {
+      -webkit-transform: translateY(6.4px);
+              transform: translateY(6.4px);
+    }
+    90% {
+      -webkit-transform: translateY(-6.4px);
+              transform: translateY(-6.4px);
+    }
+  }
+  

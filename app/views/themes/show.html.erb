@@ -1,11 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-    <%= render 'application/menubar'%>
 <%= render @theme %>
 
-<div>
-  <%= link_to "Edit this theme", edit_theme_path(@theme) %> |
-  <%= link_to "Back to themes", themes_path %>
+<br>
+<br>
+<br>
+<br>
 
-  <%= button_to "Destroy this theme", @theme, method: :delete %>
+
+
+      <%= link_to "New task", new_task_path %>
+
+
+
+<div class="C_Theme_Tasks">
+  <div id="tasks" class="O_TaskCardS">
+    <% @theme.tasks.each do |task| %>
+      <%= render task %>
+    <% end %>
+  </div>
 </div>
+

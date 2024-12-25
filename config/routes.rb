@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   resources :themes
   resources :posts
   resources :subscriptions
-  devise_for :users
 
   resources :tasks do
     resources :answers
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
     end
   end
 
-  #
+  # Тут пастроим админский неймспейс, маме Максима привет
 
 
 

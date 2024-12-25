@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_comment, only: %i[ show edit update destroy ]
 
   # GET /comments or /comments.json
@@ -24,6 +25,7 @@ class CommentsController < ApplicationController
     @answer = Answer.find(params[:answer_id])
 
     @comment = @answer.comments.create(params[:comment].permit(:user_name_title, :body_content))
+    @comment.use_id = current_user
 
 
     respond_to do |format|
@@ -68,6 +70,6 @@ class CommentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def comment_params
-      params.require(:comment).permit(:user_name_title, :body_content)
+      params.require(:comment).permit(:user_name_title, :body_content, :user_id)
     end
 end
