@@ -26,6 +26,19 @@ Rails.application.routes.draw do
 
   # Тут пастроим админский неймспейс, маме Максима привет
 
+  # Admin namespace
+  namespace :admin do
+    resources :themes, except: [ :index, :show ] do
+      resources :tasks
+    end
+    resources :tasks, except: [ :index, :show ] do
+      resources :answers
+    end
+    resources :answers, except: [ :index, :show ] do
+      resources :comments
+    end
+  end
+
 
 
 

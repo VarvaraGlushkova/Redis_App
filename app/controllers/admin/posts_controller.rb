@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Admin::PostsController < ApplicationController
   load_and_authorize_resource
   before_action :set_post, only: %i[ show edit update destroy ]
 
@@ -11,7 +11,14 @@ class PostsController < ApplicationController
   def show
   end
 
+  # GET /posts/new
+  def new
+    @post = Post.new
+  end
 
+  # GET /posts/1/edit
+  def edit
+  end
 
   # POST /posts or /posts.json
   def create

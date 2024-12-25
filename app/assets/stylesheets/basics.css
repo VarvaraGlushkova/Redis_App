@@ -10,8 +10,8 @@ body {
 
 h1 {
   color: var(--disco_sneg, #EEF1FF);
-  font-family: "Golos";
-  font-size: 17rem;
+  font-family: "SongerSEMed";
+  font-size: 12rem;
   font-style: normal;
   font-weight: 500;
 }
@@ -99,6 +99,19 @@ a:hover {
         margin-left: 58%;
     } */
 
+}
+
+.Button {
+  font-size: 1.2rem;
+  width: fit-content;
+  padding: 0.4rem 0.7rem;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 50px;
+  
+  font: "Golos";
+  border: 3px solid var(--disco_sneg, #EEF1FF);
 }
 
 

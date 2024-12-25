@@ -114,6 +114,7 @@ def create_task(quantity)
         name: create_title,
         descroption: create_description,
         image: upload_random_taskimg,
+        username: user.email,
 
 
         theme_id: theme.id,
@@ -148,7 +149,7 @@ def create_answer(quantity)
     answer_count.times do |i|
       user = User.all.sample
       answer = Answer.create!(
-        user_name: create_title,
+        user_name: user.email,
         description: create_description,
         answer_img: upload_random_answerimg,
 
@@ -176,7 +177,7 @@ def create_comment(quantity)
     comment_count.times do |i|
       user = User.all.sample
       comment = Comment.create!(
-        user_name_title: create_title,
+        user_name_title: user.email,
         body_content: @comment_text.sample,
         answer_id: answer.id,
         user_id: user.id

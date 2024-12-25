@@ -9,9 +9,11 @@
 <%# Тут мы пастроим самса *зачеркнуто* задел на неймспейс админки %>
 
 
-<%# if @user(params[:admin]) == true %>
-  <%#= link_to "New post", new_post_path %>  
-<%#end%>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to "New post", new_post_path %>  
+<%end%>
+
+
 <br>
 <br>
 

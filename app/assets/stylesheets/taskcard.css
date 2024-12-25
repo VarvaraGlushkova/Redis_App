@@ -6,6 +6,9 @@
     font-weight: 700;
 
     margin-bottom: 1.04vw;
+
+    padding: 15px 10px 20px;
+    background-color: var(--vitamin_pink, #e01067);
 }
 
 .A_TaskText {
@@ -40,16 +43,18 @@
     background: var(--chernozem);
 }
 
+.O_TaskCardM:hover{
+    background: var(--card_hover, #333031);
+}
+
 .O_TaskCardS {
-    width: fit-content;
-    width: 70.26vw;
+    width: 100%;
     
     display: flex;
     flex-direction: column;
 
-    margin: 0 auto;
 
-    margin-bottom: 2.34vw;
+    gap: 44px;
     
     background: var(--chernozem);
 
@@ -63,8 +68,24 @@
     }
 }
 
+
+.O_TaskCardS {
+
+    div:nth-child(odd){
+        margin-left: 0;
+    }
+
+    div:nth-child(even){
+        margin-right: 0;
+    }
+
+}
+
+
+
+
 .M_TaskTxtContent {
-    padding: 1.04vw 1.04vw 1.04vw;
+    padding: 0vw 1.04vw 1.04vw;
     width: 20.31vw;
     margin-right: 2.71vw;
 

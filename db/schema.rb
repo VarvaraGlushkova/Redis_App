@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_23_193334) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_25_091736) do
   create_table "answers", force: :cascade do |t|
     t.string "user_name"
     t.string "description"
@@ -52,6 +52,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_23_193334) do
     t.datetime "updated_at", null: false
     t.integer "theme_id", null: false
     t.integer "user_id"
+    t.string "username"
     t.index ["theme_id"], name: "index_tasks_on_theme_id"
   end
 

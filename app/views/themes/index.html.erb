@@ -2,6 +2,16 @@
 
 <% content_for :title, "Themes" %>
 
+<% if user_signed_in? && current_user.admin?%>
+  <%= link_to "New theme", new_theme_path %>
+<% end%>
+
+<br>
+<br>
+<br>
+
+
+
 
 <div id="themes" class="C_Themes">
   
@@ -12,4 +22,4 @@
 
 </div>
 
-<%#= link_to "New theme", new_theme_path %>
+
