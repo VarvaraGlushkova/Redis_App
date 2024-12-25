@@ -27,7 +27,7 @@ gem "jbuilder"
 #
 
 
-
+gem "meta-tags"
 # GEM FOR WORKING W IMAGES
 #
 gem "carrierwave", "~> 3.0"

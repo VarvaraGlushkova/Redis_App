@@ -12,10 +12,12 @@
   <% end %>
 
   <div>
-    <%= form.label :user_name_title, style: "display: block" %>
+    <%= form.label 'Ваше гениальное мнение', style: "display: block" %>
     <%= form.text_field :user_name_title %>
   </div>
-
+  <div>
+      <%= form.hidden_field :user_id %>
+  </div>
   <div>
     <%= form.submit %>
   </div>

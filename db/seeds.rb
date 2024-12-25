@@ -11,9 +11,9 @@ def seed
   reset_db
   create_users(10)
   create_theme(6)
-  create_task(30)
-  create_answer(10)
-  create_comment(10)
+  create_task(20)
+  create_answer(7)
+  create_comment(3)
 end
 
 def reset_db
@@ -200,6 +200,23 @@ def create_theme (quantity)
     puts "Theme with name #{theme.theme_title} was created"
   end
 end
+
+# НЕ ПОЛУЧИЛОСЬ)))))))))
+
+# def create_comment_replies
+#   Comment.all.each do |comment|
+#     answers = Answer.all
+
+#     puts answers
+#     user = User.all.sample
+#     if rand(1..3) == 1
+#       comment_reply = comment.replies.create!(
+#         user_name_title: user.email,
+#         body_content: @comment_text.sample,)
+#       puts "Comment reply with id #{comment_reply.id} for answer with id #{comment_reply.answer.id} just created"
+#     end
+#   end
+# end
 
 
 seed

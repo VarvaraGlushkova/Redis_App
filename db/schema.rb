@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_25_091736) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_25_152521) do
   create_table "answers", force: :cascade do |t|
     t.string "user_name"
     t.string "description"
@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_25_091736) do
     t.datetime "updated_at", null: false
     t.integer "answer_id", null: false
     t.integer "user_id"
+    t.integer "comment_id"
     t.index ["answer_id"], name: "index_comments_on_answer_id"
   end
 
@@ -35,6 +36,15 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_25_091736) do
     t.string "title"
     t.text "body"
     t.string "cover_img"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string "name"
+    t.text "bio"
+    t.string "avatar"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

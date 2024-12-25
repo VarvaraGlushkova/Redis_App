@@ -7,7 +7,7 @@ class Ability
     can :read, Task
     can :read, Theme
     can :read, Answer
-    can :read, Comment
+    can :create, Comment
     can :create, Subscription
 
     return unless user.present?

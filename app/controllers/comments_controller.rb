@@ -23,9 +23,10 @@ class CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @answer = Answer.find(params[:answer_id])
+    @comment.user = current_user
 
     @comment = @answer.comments.create(params[:comment].permit(:user_name_title, :body_content))
-    @comment.use_id = current_user
+    @comment.user_id = current_user
 
 
     respond_to do |format|
@@ -43,7 +44,7 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to @comment, notice: "Comment was successfully updated." }
+        format.html { redirect_to answer_path, notice: "Comment was successfully updated." }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit, status: :unprocessable_entity }

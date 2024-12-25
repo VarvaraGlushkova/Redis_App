@@ -1,5 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
+
+<%
+  set_meta_tags(
+    title: "Темы",
+    description: "Расшатай привычное представление о скучном дизайне вместе с РеДиз!",
+    keywords: "дизайн, редизайн, референсы, вдохновение"
+  )
+%>
+
 <% content_for :title, "Themes" %>
 
 <% if user_signed_in? && current_user.admin?%>

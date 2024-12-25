@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  resources :profiles
   devise_for :users
 
   resources :themes
   resources :posts
   resources :subscriptions
+
+  resources :users do
+    resources :comments
+  end
 
   resources :tasks do
     resources :answers
@@ -19,6 +24,7 @@ Rails.application.routes.draw do
   # API V1 version, fixing process
   namespace :api, format: "json" do
     namespace :v1 do
+      resources :themes, only: [ :index, :show ]
       resources :tasks, only: [ :index, :show ]
       resources :answers, only: [ :index, :show ]
     end

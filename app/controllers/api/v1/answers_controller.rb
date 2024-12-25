@@ -7,5 +7,6 @@ class Api::V1::AnswersController < ApplicationController
 
   def show
     @answer = Answer.find(params[:id])
+    @comment = @answer.comments
   end
 end

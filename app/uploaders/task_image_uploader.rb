@@ -44,4 +44,7 @@ class TaskImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg"
   # end
+  def asset_host
+    "http://localhost:3000"
+  end
 end
