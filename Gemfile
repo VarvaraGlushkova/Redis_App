@@ -30,7 +30,7 @@ gem "jbuilder"
 
 # GEM FOR WORKING W IMAGES
 #
-gem "carrierwave", "~> 3.0"
+gem "carrierwave", "~> 3.1"
 
 gem "letter_opener"
 # LOGIN AND AUTHORISE GEM
