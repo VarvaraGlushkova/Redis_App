@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     end
   end
 
-  #
+  # Тут пастроим админский неймспейс, маме Максима привет
 
 
 
