@@ -6,4 +6,6 @@ class Comment < ApplicationRecord
   belongs_to :comment, optional: true
 
   validates :body_content, presence: true
+
+  default_scope { order(created_at: "DESC") }
 end

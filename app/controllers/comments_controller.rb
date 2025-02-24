@@ -23,10 +23,10 @@ class CommentsController < ApplicationController
   # POST /comments or /comments.json
   def create
     @answer = Answer.find(params[:answer_id])
-    @comment.user = current_user
+    # @comment.user = current_user
 
     @comment = @answer.comments.create(params[:comment].permit(:user_name_title, :body_content))
-    @comment.user_id = current_user
+    @comment.user = current_user
 
 
     respond_to do |format|

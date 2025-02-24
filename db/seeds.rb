@@ -1,6 +1,6 @@
 @fill_txt = "Bionore and Aden had been friends for what felt like an eternity. They met in college, bonding over late-night pizza and study sessions. Over time, their friendship evolved into something more... casual. They both agreed on a friends-with-benefits arrangement, and it seemed like the perfect solution. No strings attached, no drama, just fun. As the months went by, Aden found himself growing more and more attached to Bionore. He couldn't quite put his finger on when it started, but he remembered the way his heart skipped a beat when she smiled at him, the way his hands itched to touch her whenever she was near. He tried to brush it off as mere infatuation, but deep down, he knew it was something more."
 
-@theme_name = [ "#fonts", "#furniture", "#branding", "#merch", "#logo", "#navigation" ]
+@theme_names = [ "#fonts", "#furniture", "#branding", "#merch", "#logo", "#navigation" ]
 
 @comment_text = [ "Этот дизайн настолько минималистичен, что я чувствую себя виноватым, нажимая на кнопку.", "Я видел сайты из 90-х с более современной графикой.", "Навигация в этом интерфейсе – как поиск выхода из лабиринта с завязанными глазами.", "Цветовая схема напоминает мне радугу после стирки.", "Кнопки такие маленькие, что мне нужен микроскоп, чтобы на них нажать.", "Я пытался прокрутить страницу, но вместо этого случайно вызвал духов.", "Дизайн настолько интуитивно понятный, что я до сих пор не понимаю, как им пользоваться.", "Шрифт такой мелкий, что мне пришлось увеличить масштаб до 500%, чтобы прочитать текст.", "Кажется, дизайнер вдохновлялся ранними версиями Paint.", "Я кликнул на кнопку и мой компьютер завис. Думаю, это была пасхалка.", "Этот интерфейс выглядит так, будто его создавали в Microsoft Word.", "Я случайно закрыл вкладку, потому что иконка закрытия больше, чем контент.", "Навигационное меню спрятано так хорошо, что я, наверное, никогда его не найду.", "Этот интерфейс – настоящий тест на терпение.", "Дизайн такой яркий, что у меня заболели глаза.", "Я пытался найти кнопку \"Связаться с нами\", но, кажется, разработчики не хотят, чтобы с ними связывались.", "Этот интерфейс – как путешествие во времени, только в худшем смысле.", "Я так долго ждал загрузки страницы, что успел написать роман.", "Этот дизайн настолько запутанный, что я чувствую себя хакером, пытаясь им пользоваться.", "Я уверен, что где-то здесь спрятана игра \"Где's Waldo?\".", "Этот интерфейс — шедевр... абсурда.", "Я пытался зарегистрироваться, но форма запросила мой номер социального страхования и группу крови.", "Дизайн такой оригинальный, что я даже не знаю, как его описать.", "Я чувствую, что мне нужен PhD в области дизайна, чтобы понять этот интерфейс.", "Кажется, кто-то вылил на клавиатуру ведро краски и назвал это дизайном.", "Я случайно нажал на рекламу и скачал вирус. Спасибо, дизайнеры!", "Я пытался найти информацию на сайте, но сдался и воспользовался Google.", "Этот дизайн настолько плох, что он даже хорош. Почти." ]
 
@@ -10,7 +10,7 @@
 def seed
   reset_db
   create_users(10)
-  create_theme(6)
+  create_theme
   create_task(20)
   create_answer(7)
   create_comment(3)
@@ -188,20 +188,27 @@ def create_comment(quantity)
   end
 end
 
-def create_theme (quantity)
-  quantity.times do
-    theme = Theme.create(
-      theme_title: @theme_name.sample,
-      theme_descr: create_description
-    )
+def create_theme
+  @theme_names.each do |theme_name|
+    Theme.find_or_create_by!(theme_title: theme_name) do |new_theme|
+      # theme = Theme.create(
+      #    theme_title: theme_name,
+      #    theme_descr: create_description
+      # )
+      new_theme.theme_descr = create_description
 
-    theme.save!
+      new_theme.save!
 
-    puts "Theme with name #{theme.theme_title} was created"
+      puts "Created theme: #{theme_name}"
+    end
   end
 end
 
 # НЕ ПОЛУЧИЛОСЬ)))))))))
+#  theme = Theme.find_or_create_by!(theme_title: theme_name) do |new_theme|
+# new_theme.theme_descr = create_description
+# end
+
 
 # def create_comment_replies
 #   Comment.all.each do |comment|
