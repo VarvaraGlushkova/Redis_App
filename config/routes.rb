@@ -24,9 +24,18 @@ Rails.application.routes.draw do
   # API V1 version, fixing process
   namespace :api, format: "json" do
     namespace :v1 do
+      resources :answers, only: [ :index, :show, :create ]
+      resources :tasks, only: [ :index, :show, :create ]
+      get "welcome/index"
+
+      devise_scope :user do
+        post "sign_up", to: "registrations#create"
+        post "sign_in", to: "sessions#create"
+        post "sign_out", to: "sessions#destroy"
+      end
+
       resources :themes, only: [ :index, :show ]
       resources :tasks, only: [ :index, :show ]
-      resources :answers, only: [ :index, :show ]
     end
   end
 

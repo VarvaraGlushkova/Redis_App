@@ -38,6 +38,8 @@ gem "devise"
 
 gem "cancancan"
 
+gem "devise-jwt"
+
 # Localise for ru lang
 
 gem "russian"
