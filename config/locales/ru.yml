@@ -1,0 +1,43 @@
+ru:
+  activerecord:
+    models:
+      answer:
+        one: "редизка"
+        many: "редизки"
+        other: "редизок"
+
+      task:
+        one: "таск"
+        many: "таска"
+        other: "тасков"
+
+      theme:
+        one: "тема"
+        many: "темы"
+        other: "тем"
+
+    attributes:
+      effect:
+        name: "Название"
+        description: "Описание"
+        speed: "Скорость установки"
+        tag_list: "Теги"
+        img: "Картинка"
+        link_to: "Ссылка на эффект"
+        manual: "Описание загрузки"
+        devices: "Поддерживаемые системы"
+
+      question:
+        title: "Вопрос"
+        media: "Картинки"
+        description: "Описание"
+        tag_list: "Теги"
+
+      collection:
+        name: "Название"
+        description: "Описание"
+        tag_list: "Теги"
+
+  errors:
+    messages:
+      not_saved: "Не сохранено"

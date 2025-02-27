@@ -38,6 +38,9 @@ gem "devise"
 
 gem "cancancan"
 
+# Localise for ru lang
+
+gem "russian"
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
