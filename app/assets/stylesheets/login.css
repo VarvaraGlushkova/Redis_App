@@ -1,0 +1,59 @@
+.M_WelcomeLogin {
+    margin: 0 auto;
+    width: fit-content;
+
+
+    h2 {
+        font-size: 60px;
+        font-weight: 300;
+        margin-bottom: 10px;
+        text-align: center; 
+    }
+
+    h4 {
+        font-size: 20px;
+        font-family: "SongerSEMed";
+        text-align: center; 
+        margin-bottom: 16px;
+    }
+
+    p {
+        font-size: 0.8rem;
+        color: var(--chernozem, #211F20); 
+        width: 432px;
+        text-align: center;  
+        margin: 0 auto; 
+        opacity: 50%;
+        margin-bottom: 40px;
+    }
+}
+
+.A_LoginForm {
+    width: fit-content;
+    height: fit-content;
+    margin-bottom: 24px;
+
+}
+
+.A_Button {
+    display: flex;
+    width: 197px;
+    padding: 4px 64px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border: 1px solid var(--Vitamin-Pink, #E01067);
+
+    input {
+        
+        padding: 0px;
+        font-family: "Golos";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        color: var(--Vitamin-Pink, #E01067);
+        height: fit-content;
+        background-color: var(--disco_sneg, #EEF1FF);
+    }
+}
