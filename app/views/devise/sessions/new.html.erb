@@ -1,0 +1,29 @@
+
+<div class="M_WelcomeLogin">
+  <h2>ДОБРО ПОЖАЛОВАТЬ!</h2>
+  <h4>редиз — сообщество уникальных и креативных</h4>
+  <p>Присоединяйся к нашему комьюнити, <br>
+  создай аккаунт или войди в свой профиль чтобы продолжить</p>
+</div>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field A_LoginForm">
+    <%#= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+  </div>
+
+  <div class="field A_LoginForm">
+    <%#= f.label :password %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+  </div>
+
+
+  <div class="actions A_Button">
+    <%= f.submit "Войти" %>
+  </div>
+<% end %>
+
+<div>
+  
+</div>
+<%= render "devise/shared/links" %>

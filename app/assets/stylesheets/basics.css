@@ -4,12 +4,12 @@ body {
     size: 1.2rem;
     margin: 24px 80px;
 
-    background-color: var(--chernozem);
+    background-color: var(--disco_sneg, #EEF1FF);
 
 }
 
 h1 {
-  color: var(--disco_sneg, #EEF1FF);
+  color: var(--chernozem, #211F20);
   font-family: "SongerSEMed";
   font-size: 12rem;
   font-style: normal;
@@ -17,24 +17,26 @@ h1 {
 }
 
 h2 {
-  color: var(--Disco-Sneg, #EEF1FF);
-  font-family: "Golos Text";
+  color: var(--chernozem, #211F20);
+  font-family: "SongerSEMed";
   font-size: 10rem;
   font-style: normal;
   font-weight: 500;
 }
+
+
 
 h4 {
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 800;
   font-family: "Golos";
-  color: var(--disco_sneg);
+  color: var(--chernozem, #211F20);;
 }
 
 a {
-    color: var(--disco_sneg);
-    text-decoration: none;
+  color: var(--chernozem, #211F20);;
+  text-decoration: none;
 }
 
 a:hover {
@@ -42,6 +44,51 @@ a:hover {
   text-decoration: none;
 }
 
+input {
+  background-color: #E2E7FF;
+  border: none;
+  width: 548px;
+  height: 20px;
+  padding: 10px;
+
+
+}
+
+input::placeholder {
+  color: #92A5FF;
+  font-size: 16px;
+  font-family: "Golos";
+
+}
+
+
+form.new_user {
+  width: fit-content;
+  margin: 0 auto;
+
+}
+.A_Button {
+  display: flex;
+  width: 197px;
+  padding: 4px 64px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border: 1px solid var(--Vitamin-Pink, #E01067);
+
+  input {
+      
+      padding: 0px;
+      font-family: "Golos";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      color: var(--Vitamin-Pink, #E01067);
+      height: fit-content;
+      background-color: var(--disco_sneg, #EEF1FF);
+  }
+}
 
 .W_TaskAnswers {
     display: grid;

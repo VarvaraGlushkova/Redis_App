@@ -9,6 +9,12 @@
     font-weight: 500;
     font-size: 1.2rem;
 
+    a {
+        font-family: "SongerSEMed";
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
     a:hover {
         color: var(--hover);
         transition: 0.3s;
@@ -23,8 +29,16 @@
     
 
     a {
-        color: var(--disco_sneg);
+        color: var(--chernozem, #211F20);
         text-decoration: none;
+    }
+
+    .M_LinksHeader {
+        display: flex;
+        flex-direction: row;
+        gap: 4.4rem;
+        justify-content: space-between;
+        padding-right: 34rem;
     }
 
 }
