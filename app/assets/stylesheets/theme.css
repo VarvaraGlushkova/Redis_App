@@ -10,7 +10,7 @@
     height: 464px;
     overflow: hidden;
 
-    background:  linear-gradient(186deg, #C7D83D 4.4%, #E01067 44.63%, #211F20 84.11%);
+    /* background:  linear-gradient(186deg, #C7D83D 4.4%, #E01067 44.63%, #211F20 84.11%); */
 
     h1 {
         padding-top: 11rem;
@@ -22,16 +22,16 @@
 .C_Themes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 24px;
-    grid-row-gap: 60px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 48px;
 
     .O_Theme_CardM {
         grid-column: span 1;
         width: 45.26vw;
         height: 24.17vw;
 
-        background: linear-gradient(186deg, #C7D83D 4.4%, #E01067 44.63%, #211F20 84.11%);
+        background: linear-gradient(186deg, #C7D83D 4.4%, #E01067 44.63%, #211F20 84.11%); 
 
         h1 {
             font-size: 7rem;
