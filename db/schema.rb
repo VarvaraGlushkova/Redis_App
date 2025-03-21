@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_25_152521) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_21_111627) do
   create_table "answers", force: :cascade do |t|
     t.string "user_name"
     t.string "description"
@@ -83,7 +83,9 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_25_152521) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
+    t.string "jti"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["jti"], name: "index_users_on_jti", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -93,5 +95,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_25_152521) do
   end
 
   add_foreign_key "comments", "answers"
+  add_foreign_key "profiles", "users", on_delete: :cascade
   add_foreign_key "tasks", "themes"
 end

@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   resources :themes
   resources :posts
   resources :subscriptions
+  resources :profiles
 
   resources :users do
     resources :comments
+    resources :profiles, only: [:show, :edit, :update]
   end
 
   resources :tasks do
