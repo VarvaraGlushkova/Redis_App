@@ -4,18 +4,21 @@ class ProfilesController < ApplicationController
   
   # GET /profiles or /profiles.json
   def index
-    @profiles = Profile.all
+    @profiles = Profile.includes(:user)
+    @profile_post_counts = Post.group(:user_id).count
   end
 
   # GET /profiles/1 or /profiles/1.json
   def show
+    @user = @profile.user
+    @profile = Profile.find(params[:id])
   end
 
   # GET /profiles/new
-  def new
-    @profile = Profile.new(user_id: current_user[:id])
-    @answer.user_id = current_user
-  end
+  # def new
+  #   @profile = Profile.new(user_id: current_user[:id])
+  #   @answer.user_id = current_user
+  # end
 
   # GET /profiles/1/edit
   def edit
@@ -66,8 +69,14 @@ class ProfilesController < ApplicationController
     def set_profile
       @profile = Profile.find(params[:id])
     end
+    # @profile = current_user.profile
 
-    # Only allow a list of trusted parameters through.
+    # Handle the case where the user doesn't have a profile
+    # unless @profile
+      # flash[:alert] = "Profile not found. Please create one."
+      # redirect_to new_profile_path # Redirect to create a new profile
+    # end
+
     def profile_params
       params.require(:profile).permit(:name, :bio, :avatar, :user_id)
     end

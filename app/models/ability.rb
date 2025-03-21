@@ -7,6 +7,7 @@ class Ability
     can :read, Task
     can :read, Theme
     can :read, Answer
+    can :read, Profile
     can :create, Comment
     can :create, Subscription
 
@@ -16,6 +17,7 @@ class Ability
     can :manage, Task, user_id: user.id
     can :manage, Answer, user_id: user.id
     can :manage, Comment, user_id: user.id
+    can :manage, Profile, user_id: user.id
 
     return unless user.admin?
     can :manage, :all

@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
-  resources :profiles
   devise_for :users
 
   resources :themes
   resources :posts
   resources :subscriptions
-  resources :profiles
+  resources :profiles, only: [ :index, :show ]
 
   resources :users do
     resources :comments
-    resources :profiles, only: [:show, :edit, :update]
+    resources :profiles
+    
   end
 
   resources :tasks do

@@ -1,17 +1,17 @@
 <div class="M_Menubar">
 
-<%= image_tag("A_Logo_Header.svg", alt: "Картинка логотипа") %>
+  <%= image_tag("A_Logo_Header.svg", alt: "Картинка логотипа") %>
 
-<div class="M_LinksHeader">
-  <%= link_to 'Главная', root_path %>
-  <%= link_to 'Темы', themes_path %>
-  <%= link_to 'Блог', posts_path %>
-</div>
-
-
+  <div class="M_LinksHeader">
+    <%= link_to 'Главная', root_path %>
+    <%= link_to 'Темы', themes_path %>
+    <%= link_to 'Блог', posts_path %>
+  </div>
 
 
- <div class="M_LoginSets">
+
+
+  <div class="M_LoginSets">
     <% if user_signed_in? %>
       <%= link_to current_user.email, edit_user_registration_path %>
       <%= link_to "Выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
@@ -21,4 +21,5 @@
     <% end %>
   </div>
 
+  
 </div>
