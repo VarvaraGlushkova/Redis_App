@@ -57,3 +57,12 @@
         background-color: var(--disco_sneg, #EEF1FF);
     }
 }
+
+form.new_user {
+    align-items: center;
+    align-content: center;
+
+    .A_Button {
+        margin: 0 auto;
+    }
+}
