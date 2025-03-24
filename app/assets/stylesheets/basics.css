@@ -1,10 +1,14 @@
 body {
     font-family: "Golos";
-    color: var(--disco_sneg);
     size: 1.2rem;
     margin: 24px 80px;
 
     background-color: var(--disco_sneg, #EEF1FF);
+
+}
+
+p {
+  color: var(--chernozem, #211F20);
 
 }
 
@@ -20,6 +24,14 @@ h2 {
   color: var(--chernozem, #211F20);
   font-family: "SongerSEMed";
   font-size: 10rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+h3 {
+  color: var(--chernozem, #211F20);
+  font-family: "SongerSEMed";
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 500;
 }

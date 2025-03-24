@@ -46,6 +46,9 @@ gem "jwt"
 gem "russian"
 
 
+# For pretty code stuff
+gem 'stimulus-rails'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 

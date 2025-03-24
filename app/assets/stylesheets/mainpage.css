@@ -1,0 +1,46 @@
+.A_TutorialBanner {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+
+    img {
+        height: 20.52vw;
+        width: 45vw;
+    }
+}
+
+.M_TutorialText {
+    width: 19rem;
+
+    h2 {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        margin-bottom: 0.6rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+.A_TutorialTitle {
+    margin-bottom: 1rem;
+
+    h2 {
+        font-size: 7rem;
+        line-height: 7rem;
+    }
+
+    p{
+        font-size: 2.2rem;
+        font-family: 'SongerSEMed';
+    }
+}
+
+.M_Tutorial {
+    margin-left: 13vw;
+}
+
+.C_MainContainer {
+    
+}
