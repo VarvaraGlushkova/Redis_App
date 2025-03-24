@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_21_111627) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_24_115035) do
   create_table "answers", force: :cascade do |t|
     t.string "user_name"
     t.string "description"
@@ -28,7 +28,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_21_111627) do
     t.datetime "updated_at", null: false
     t.integer "answer_id", null: false
     t.integer "user_id"
-    t.integer "comment_id"
     t.index ["answer_id"], name: "index_comments_on_answer_id"
   end
 
@@ -41,12 +40,11 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_21_111627) do
   end
 
   create_table "profiles", force: :cascade do |t|
+    t.integer "user_id", null: false
     t.string "name"
     t.text "bio"
     t.string "avatar"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "subscriptions", force: :cascade do |t|
@@ -95,6 +93,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_21_111627) do
   end
 
   add_foreign_key "comments", "answers"
-  add_foreign_key "profiles", "users", on_delete: :cascade
+  add_foreign_key "profiles", "users"
   add_foreign_key "tasks", "themes"
 end

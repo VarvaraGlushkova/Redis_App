@@ -3,11 +3,16 @@ class ApplicationController < ActionController::Base
   allow_browser versions: :modern
 
   protect_from_forgery with: :exception
-
-  helper_method :current_user
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+  before_action :authenticate_guest
+  
+  def authenticate_guest
+    if current_user
+      if cookies[:guest_token]
+        puts cookies[:guest_token] == current_user.jti
+      else
+        cookies[:guest_token] = current_user.jti
+      end
+    end
   end
 
   # def authenticate_guest
@@ -56,20 +61,20 @@ class ApplicationController < ActionController::Base
   #   # cookies.delete(:guest_token)
   # end
 
-  def authenicate_guest
-    if current_user
-      if cookies[:guest_token]
-        puts cookies[:guest_token] == current_user.jti
-      else
-        cookies[:guest_token] = current_user.jti
-      end
-    end
-  end
+  # def authenicate_guest
+  #   if current_user
+  #     if cookies[:guest_token]
+  #       puts cookies[:guest_token] == current_user.jti
+  #     else
+  #       cookies[:guest_token] = current_user.jti
+  #     end
+  #   end
+  # end
 
-  rescue_from CanCan::AccessDenied do |exception|
-    respond_to do |format|
-      format.json { head :forbidden }
-      format.html { redirect_to root_path, alert: exception.message }
-    end
-  end
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   respond_to do |format|
+  #     format.json { head :forbidden }
+  #     format.html { redirect_to root_path, alert: exception.message }
+  #   end
+  # end
 end

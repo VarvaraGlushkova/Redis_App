@@ -10,15 +10,15 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1 or /profiles/1.json
   def show
-    # @user = @profile.user
-    # @profile = Profile.find(params[:id])
+    @profile = Profile.find(params[:id])
+    @user = @profile.user
+    @answers = @user.answers
   end
 
   # GET /profiles/new
-  # def new
-  #   @profile = Profile.new(user_id: current_user[:id])
-  #   @answer.user_id = current_user
-  # end
+  def new
+    @profile = Profile.new
+  end
 
   # GET /profiles/1/edit
   def edit
@@ -26,9 +26,7 @@ class ProfilesController < ApplicationController
 
   # POST /profiles or /profiles.json
   def create
-    
     @profile = Profile.new(profile_params)
-    @profile.user_id = current_user
 
     respond_to do |format|
       if @profile.save
@@ -41,6 +39,7 @@ class ProfilesController < ApplicationController
     end
   end
 
+  
   # PATCH/PUT /profiles/1 or /profiles/1.json
   def update
     respond_to do |format|
@@ -67,9 +66,14 @@ class ProfilesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
-      @profile = Profile.find(params[:id])
+      if current_user
+        @profile = current_user.profile || current_user.create_profile!
+        @profile.user_id = current_user.id
+      else
+        @profile = Profile.find_by(id: params[:id]) if params[:id]
+      end
     end
-    # @profile = current_user.profile
+
 
     # Handle the case where the user doesn't have a profile
     # unless @profile
@@ -78,6 +82,6 @@ class ProfilesController < ApplicationController
     # end
 
     def profile_params
-      params.require(:profile).permit(:name, :bio, :avatar, :user_id)
+      params.require(:profile).permit(:id, :name, :bio, :avatar, :user_id)
     end
 end

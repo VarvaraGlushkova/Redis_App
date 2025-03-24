@@ -8,8 +8,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :comments
-    resources :profiles
-    
+    resources :profiles, only: [:new, :create, :show, :edit, :update]
   end
 
   resources :tasks do

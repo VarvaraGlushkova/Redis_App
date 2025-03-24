@@ -8,19 +8,17 @@ class Ability
     can :read, Theme
     can :read, Answer
     can :read, Profile
-    can :create, Comment
-    can :create, Subscription
+    
 
     return unless user.present?
-
-    can :read, Post
-    can :manage, Task, user_id: user.id
-    can :manage, Answer, user_id: user.id
-    can :manage, Comment, user_id: user.id
-    can :manage, Profile, user_id: user.id
+      can :read, Post
+      can :manage, Task, user_id: user.id
+      can :manage, Answer, user_id: user.id
+      can :manage, Comment, user_id: user.id
+      can :manage, Profile, user_id: user.id
 
     return unless user.admin?
-    can :manage, :all
+      can :manage, :all
 
 
 
