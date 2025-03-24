@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :themes
   resources :posts
   resources :subscriptions
-  resources :profiles, only: [ :index, :show ]
+  resources :profiles
 
   resources :users do
     resources :comments

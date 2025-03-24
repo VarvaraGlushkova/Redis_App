@@ -74,13 +74,6 @@ class ProfilesController < ApplicationController
       end
     end
 
-
-    # Handle the case where the user doesn't have a profile
-    # unless @profile
-      # flash[:alert] = "Profile not found. Please create one."
-      # redirect_to new_profile_path # Redirect to create a new profile
-    # end
-
     def profile_params
       params.require(:profile).permit(:id, :name, :bio, :avatar, :user_id)
     end

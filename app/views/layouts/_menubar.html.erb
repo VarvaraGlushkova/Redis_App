@@ -17,8 +17,7 @@
       <%= link_to "Выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
       <%#= link_to "Profile", user_profile_path(current_user, @profile) %>
       <%# <% if current_user.profile.persisted? %> 
-      <%= link_to "View Profile", user_profile_path(current_user, current_user.profile) %>
-
+      <%= link_to "View Profile", profile_path(current_user) %>
 
     <% else %>
       <%= link_to "Войти", new_user_session_path %>
