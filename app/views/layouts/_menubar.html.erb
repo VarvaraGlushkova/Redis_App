@@ -12,14 +12,19 @@
 
 
   <div class="M_LoginSets">
-    <% if user_signed_in? %>
+    <% if current_user %>
       <%= link_to current_user.email, edit_user_registration_path %>
       <%= link_to "Выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
+      <%= "NORM HUINYA" %>
+
     <% else %>
       <%= link_to "Войти", new_user_session_path %>
       <%= link_to "Зарегистрироваться", new_user_registration_path %>
+      <%= "HUINYA" %>
+
+
     <% end %>
   </div>
 
-  
+
 </div>
