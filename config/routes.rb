@@ -28,7 +28,7 @@ Rails.application.routes.draw do
       resources :answers, only: [ :index, :show ]
       resources :themes, only: [ :index, :show ]
       resources :tasks, only: [ :index, :show ]
-      resources :profiles, only: [ :index, :show ]
+      resources :profiles, only: [ :show ]
       resources :users, only: [:index, :show]
 
       devise_scope :user do

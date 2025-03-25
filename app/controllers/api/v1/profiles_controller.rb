@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
   # GET /profiles or /profiles.json
   def index
     @profiles = Profile.includes(:user)
-    @profile_post_counts = Post.group(:user_id).count
+    # @profile_post_counts = Post.group(:user_id).count
   end
 
   # GET /profiles/1 or /profiles/1.json
@@ -23,7 +23,7 @@ class ProfilesController < ApplicationController
       @profile = Profile.includes(
         user: [
           :answers,
-          :tasks
+          # :tasks
         ]
       ).find(params[:id])
     end

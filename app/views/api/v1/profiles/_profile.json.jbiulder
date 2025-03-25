@@ -1,4 +1,4 @@
-json.extract! @profile, :name, :bio, :avatar
+json.extract! @profile, :name, :bio, :avatar, :user_id
 
 
 json.profile do
