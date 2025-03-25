@@ -25,6 +25,11 @@
     </div>
 
     <div class="C_MainContainer">
+        <%# <div id="tasks" class="O_TaskCardM"> %>
+            <% @tasks.each do |task| %>
+            <%= render task %>
+            <% end %>
+        <%# </div> %>
     </div>    
     
        

@@ -1,20 +1,25 @@
 .A_TaskTitle {
-    color: var(--disco_sneg);
     font-family: "Golos";
-    font-size: 1.8rem;
+    font-size: 1rem;
     font-style: normal;
-    font-weight: 700;
+    font-weight: bold;
+    color: var(--vitamin_pink, #e01067);
 
-    margin-bottom: 1.04vw;
+    height: fit-content;
+    width: fit-content;
 
-    padding: 15px 10px 20px;
-    background-color: var(--vitamin_pink, #e01067);
+    border: 3px solid var(--Vitamin-Pink, #E01067);
+    background: var(--Disco-Sneg, #EEF1FF);
+
+    padding: 9.015px 13.523px;
+    align-items: center;
+    gap: 9.015px;
 }
 
 .A_TaskText {
 
     width: 20.73vw;
-    color: var(--disco_sneg);
+
     font-family: "Golos";
     font-size: 1.1rem;
     font-style: normal;
@@ -30,64 +35,38 @@
 }
 
 .O_TaskCardM {
-    width: fit-content;
-    width: 70.26vw;
-    
-    display: flex;
-    flex-direction: row;
+    overflow: hidden;
 
-    margin: 0 auto;
-
-    margin-bottom: 2.34vw;
-    
-    background: var(--chernozem);
-}
-
-.O_TaskCardM:hover{
-    background: var(--card_hover, #333031);
-}
-
-.O_TaskCardS {
-    width: 100%;
-    
+    height: 380px;
     display: flex;
     flex-direction: column;
 
 
-    gap: 44px;
-    
-    background: var(--chernozem);
 
-    .O_TaskCardM {
-        margin-bottom: 0px;
-    }
 
-    a {
-        margin: 0 auto;
-        margin-bottom: 1.04vw;
-    }
+    /* background: var(--disco_sneg); */
+    background: gray;
+}
+
+.O_TaskCardM:hover{
+    background: #333031;
 }
 
 
-.O_TaskCardS {
-
-    div:nth-child(odd){
-        margin-left: 0;
-    }
-
-    div:nth-child(even){
-        margin-right: 0;
-    }
-
-}
 
 
 
 
 .M_TaskTxtContent {
-    padding: 0vw 1.04vw 1.04vw;
-    width: 20.31vw;
-    margin-right: 2.71vw;
+    padding: 0;
+    height: fit-content;
+    /* width: 100%;
+
+    /* width: 20.31vw; */
+    /* margin-right: 2.71vw; */
+    /* display: flex;
+    flex-direction: row; */
+    justify-content: space-between;
 
     a {
         margin-top: 5.21vw;
@@ -106,12 +85,21 @@
 
 .A_TaskImg {
     overflow: hidden;
-    height: 17.55vw;
-    width: 45.16vw;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    height: 310px;
+
+    justify-content: center;
+    align-items: center;
 
     img {
-        object-fit: cover;
+        /* object-fit: cover; */
         width: 100%;
     }
 
+}
+
+.A_UserNameLink {
+    padding: 8px 0;
 }

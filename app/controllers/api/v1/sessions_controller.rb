@@ -9,7 +9,7 @@ class Api::V1::SessionsController < Devise::SessionsController
 
   def create
     puts "-----------------------"
-    puts "REQUEST HERE"
+    puts "ЗДЕСЬ ИДЕТ ЗАПРОС"
     puts "-----------------------"
 
    if @user.valid_password?(sign_in_params[:password])

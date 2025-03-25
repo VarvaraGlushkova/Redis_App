@@ -6,8 +6,8 @@
 }
 
 .O_Theme_CardM {
-    width: 1760px;
-    height: 464px;
+    /* width: 1760px;
+    height: 464px; */
     overflow: hidden;
 
     /* background:  linear-gradient(186deg, #C7D83D 4.4%, #E01067 44.63%, #211F20 84.11%); */
@@ -28,8 +28,8 @@
 
     .O_Theme_CardM {
         grid-column: span 1;
-        width: 45.26vw;
-        height: 24.17vw;
+        /* width: 45.26vw;
+        height: 24.17vw; */
 
         background: linear-gradient(186deg, #C7D83D 4.4%, #E01067 44.63%, #211F20 84.11%); 
 

@@ -42,5 +42,17 @@
 }
 
 .C_MainContainer {
-    
+    margin-left: 13vw;
+    margin-top: 3.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 48px;
+    grid-row-gap: 36px;
+
+    .O_TaskCardM {
+        grid-column: span 1;
+    }
+
+
 }

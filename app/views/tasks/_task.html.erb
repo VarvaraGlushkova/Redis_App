@@ -1,27 +1,32 @@
+
+<%= link_to (task) do %>
+
 <div id="<%= dom_id task %>" class="O_TaskCardM">
 
   <div class="M_TaskTxtContent">
 
-    <h2 class="A_TaskTitle">
-      <%= task.name %>
-    </h2>
+    <div class="A_TaskTitle">
+       TASK: <%= task.name %>
+    </div>
 
-    <p class="A_TaskText">
-      <%= task.username %>
-      <br>
-      <br>
-      <%= task.descroption %>
-    </p>
+    <%# <p class="A_TaskText"> %>
 
-    <%= link_to "Посмотреть", task %>
+      <%#= task.username %>
+    <%# </p> %>
+
+    <%#= link_to "Посмотреть", task %>
     
-
 
   </div>
 
 
   <div class="A_TaskImg">
-   <%= image_tag task.image.url, height: 300 %>
+   <%= image_tag task.image.url %>
+   <%= image_tag task.image.url %>
   </div>
 
+  <div class="A_UserNameLink">
+    <%= task.username %>
+  </div>
 </div>
+<% end %>
