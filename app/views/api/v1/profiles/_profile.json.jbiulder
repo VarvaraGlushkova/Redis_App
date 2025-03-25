@@ -1,0 +1,10 @@
+json.extract! @profile, :name, :bio, :avatar
+
+
+json.profile do
+  if collection.user&.profile.present?
+    json.extract! collection.user.profile, :name
+  else
+    json.null!
+  end
+end
