@@ -1,24 +1,15 @@
 
-<%= link_to (task) do %>
-
+<%= link_to (task)  do %>
 <div id="<%= dom_id task %>" class="O_TaskCardM">
 
   <div class="M_TaskTxtContent">
-
     <div class="A_TaskTitle">
        TASK: <%= task.name %>
     </div>
-
-    <%# <p class="A_TaskText"> %>
-
-      <%#= task.username %>
-    <%# </p> %>
-
-    <%#= link_to "Посмотреть", task %>
     
+    <%= image_tag("icon_pin.png", alt: "Картинка сохранения") %>
 
   </div>
-
 
   <div class="A_TaskImg">
    <%= image_tag task.image.url %>

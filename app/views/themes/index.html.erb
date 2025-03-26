@@ -15,20 +15,18 @@
   <%= link_to "New theme", new_theme_path %>
 <% end%>
 
-<br>
-<br>
-<br>
+<div class="M_ThemePageInfo">
+  <h1>ТЕМЫ</h1>
 
-
+  <p>В этом разделе вы найдете список актуальных тем и заданий 
+    для редизайна. Выбирайте то, что вам по душе, берите задачу в работу <br> и делитесь своими креативными решениями. </p>
+</div>
 
 
 <div id="themes" class="C_Themes">
-  
     <% @themes.each do |theme| %>
       <%= render theme %>
     <% end %>
-
-
 </div>
 
 

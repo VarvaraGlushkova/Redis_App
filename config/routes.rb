@@ -13,10 +13,23 @@ Rails.application.routes.draw do
 
   resources :tasks do
     resources :answers
+
+    member do
+      post 'like', to: 'likes#create'
+      delete 'unlike', to: 'likes#destroy'
+    end
   end
 
   resources :answers do
     resources :comments
+
+    resources :likes, only: [:index, :show, :create, :update, :destroy]
+
+    member do
+      post 'like', to: 'likes#create'
+      delete 'unlike', to: 'likes#destroy'
+    end
+
   end
 
   # LOGIN AND AUTHORISE
@@ -40,6 +53,12 @@ Rails.application.routes.draw do
 
       resources :answers, only: [:show] do
         resources :comments, only: [:index, :show, :create, :update, :destroy]
+        resources :likes, only: [:index, :show, :create, :update, :destroy]
+
+        member do
+          post 'like', to: 'likes#create'
+          delete 'unlike', to: 'likes#destroy'
+        end
     
       end
 

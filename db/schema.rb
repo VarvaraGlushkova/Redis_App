@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_24_115035) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_25_215744) do
   create_table "answers", force: :cascade do |t|
     t.string "user_name"
     t.string "description"
@@ -29,6 +29,17 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_24_115035) do
     t.integer "answer_id", null: false
     t.integer "user_id"
     t.index ["answer_id"], name: "index_comments_on_answer_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "likeable_type"
+    t.integer "likeable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable"
+    t.index ["user_id", "likeable_id", "likeable_type"], name: "index_likes_on_user_id_and_likeable_id_and_likeable_type", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -93,6 +104,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_24_115035) do
   end
 
   add_foreign_key "comments", "answers"
+  add_foreign_key "likes", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "tasks", "themes"
 end

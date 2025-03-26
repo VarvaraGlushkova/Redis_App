@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :tasks
   has_many :answers
   has_many :comments
+  has_many :likes, dependent: :destroy
   has_one :profile, dependent: :destroy #so after deletes user profile delets too
 
   # after_create :create_user_profile

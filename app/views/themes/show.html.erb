@@ -1,11 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
+<div class="M_ThemePage">
 <%= render @theme %>
+</div>
 
-<br>
-<br>
-<br>
-<br>
 <%
   set_meta_tags(
     title: "Темы",
@@ -13,18 +11,18 @@
     keywords: "дизайн, редизайн, референсы, вдохновение"
   )
 %>
-
-<div class="A_NewTask Button">
-  <%= link_to "добавить таск", new_task_path %>
+<div class="A_NewTask">
+  <div class="ButtonAction">
+    <%= link_to "Добавить таск", new_task_path %>
+  </div>
 </div>
 
 
 
-<div class="C_Theme_Tasks">
-  <div id="tasks" class="O_TaskCardS">
+
+<div class="C_Themes">
     <% @theme.tasks.each do |task| %>
       <%= render task %>
     <% end %>
-  </div>
 </div>
 

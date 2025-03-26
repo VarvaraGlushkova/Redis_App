@@ -1,9 +1,20 @@
 <div id="<%= dom_id theme %>" class="O_Theme_CardM">
 
+  <div class="A_ThemeCover">
+      <%= image_tag("COVER_THEME.png", alt: "Картинка логотипа") %>
+  </div>
 
-<h1>
-  <%= link_to theme.theme_title, theme %>
-</h1>
+  <div class="M_ThemeText">
+      <h1>
+        <%= link_to theme.theme_title, theme %>
+      </h1>
+
+      <p>
+        112 
+        <br> 
+        таска
+      </p>
+  </div>
 
 
   <%# <%= link_to "Edit this theme", edit_theme_path(@theme) %> 

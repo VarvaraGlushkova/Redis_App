@@ -45,13 +45,12 @@
 
 
     /* background: var(--disco_sneg); */
-    background: gray;
+    background: var(--Disco-Sneg, #EEF1FF);
 }
 
 .O_TaskCardM:hover{
-    background: #333031;
+    background: #d6ddff;
 }
-
 
 
 
@@ -64,8 +63,8 @@
 
     /* width: 20.31vw; */
     /* margin-right: 2.71vw; */
-    /* display: flex;
-    flex-direction: row; */
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
 
     a {
@@ -79,6 +78,11 @@
         font-size: 0.75rem;
         font-style: normal;
         font-weight: 700;
+    }
+
+    img {
+        width: 28px;
+        height: 28px;
     }
 
 }

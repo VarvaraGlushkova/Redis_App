@@ -10,10 +10,9 @@
     height: 464px; */
     overflow: hidden;
 
-    /* background:  linear-gradient(186deg, #C7D83D 4.4%, #E01067 44.63%, #211F20 84.11%); */
 
     h1 {
-        padding-top: 11rem;
+        /* padding-top: 11rem; */
 
     }
 }
@@ -26,24 +25,95 @@
     grid-column-gap: 50px;
     grid-row-gap: 48px;
 
+    margin-left: 163px;
+
     .O_Theme_CardM {
         grid-column: span 1;
-        /* width: 45.26vw;
-        height: 24.17vw; */
 
-        background: linear-gradient(186deg, #C7D83D 4.4%, #E01067 44.63%, #211F20 84.11%); 
+        background: var(--Disco-Sneg, #EEF1FF);
+
 
         h1 {
-            font-size: 7rem;
-            margin-left: -1.5rem;
+            font-size: 62px;
 
             a:hover {
-                color: var(--button_hover);
+                color: #E01067;
             }
         }
+    }
+
+    .O_Theme_CardM:hover {
+        background: #d6ddff;
+    }
+}
+
+.Show_Page {
+
+}
+
+.A_ThemeCover {
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+}
+
+
+.M_ThemeText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    p {
+        font-size: 22px;
+        align-content: center;
+        text-align: center;
     }
 }
 
 .A_NewTask {
-    margin-left: 92%;
+    margin: 1.5rem 0 3rem;
+    display: flex;
+    justify-content: end;
+}
+
+.M_ThemePageInfo {
+    margin-left: 163px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 1.8rem;
+
+    h1 {
+        font-size: 4.8rem;
+    }
+
+    p {
+        width: 567px;
+    }
+}
+
+.M_ThemePage {
+    margin-left: 163px;
+
+    h1 {
+        font-size: 96px;
+    }
+
+    p {
+        font-size: 40px;
+    }
+
+    img {
+        display: none;
+    }
+
+    a:hover {
+        color: #211F20;
+    }
+
 }

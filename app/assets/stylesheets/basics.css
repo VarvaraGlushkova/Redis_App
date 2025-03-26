@@ -102,6 +102,26 @@ form.new_user {
   }
 }
 
+.ButtonAction {
+  display: flex;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  background: var(--Vitamin-Pink, #E01067);
+
+  a {
+    color: var(--Disco-Sneg, #EEF1FF);
+    font-family: "Golos";
+    font-size: 20px;
+  }
+
+
+}
+
 .W_TaskAnswers {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
