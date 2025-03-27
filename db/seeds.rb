@@ -238,6 +238,7 @@ def create_theme
       #    theme_descr: create_description
       # )
       new_theme.theme_descr = create_description
+      new_theme.theme_cover = upload_random_taskimg
 
       new_theme.save!
 

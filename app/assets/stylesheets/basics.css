@@ -122,19 +122,7 @@ form.new_user {
 
 }
 
-.W_TaskAnswers {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 36px;
 
-    .C_AnswerCard {
-        .M_AnswerTXT{
-            display: none;
-        }
-    }
-}
 
 .shake-vertical {
 	-webkit-animation: shake-vertical 8s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite both;

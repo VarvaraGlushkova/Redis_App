@@ -4,13 +4,31 @@
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 1.04vw;
     grid-row-gap: 1.56vw;
+
+
+}
+
+.W_TaskAnswers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 1.5rem;
+
+    margin-left: 163px;
+
+    .C_AnswerCard {
+        .M_AnswerTXT{
+            display: none;
+        }
+    }
 }
 
 
 
 .C_AnswerCard {
     overflow: hidden;
-    grid-column: span 2;
+    /* grid-column: span 2; */
 
     width: 27.5vw;
     height: 21.41vw;

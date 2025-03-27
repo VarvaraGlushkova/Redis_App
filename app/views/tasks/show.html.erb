@@ -4,8 +4,10 @@
 
 <div class="O_TaskCardS">
   <%= render @task %>
-  <%= link_to "Edit this task", edit_task_path(@task) %>
+
+
 </div>
+
 <%
   set_meta_tags(
     title: "Задания",
@@ -15,9 +17,10 @@
 %>
 
 <div>
-  <%= link_to "Back to tasks", tasks_path %>
-
-  <%= button_to "Destroy this task", @task, method: :delete %>
+  <% if user_signed_in? %>
+    <%= button_to "Destroy this task", @task, method: :delete %>
+    <%= link_to "Edit this task", edit_task_path(@task) %>
+  <%end%>
 </div>
 
 <br>

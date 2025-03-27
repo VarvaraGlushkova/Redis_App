@@ -21,9 +21,10 @@
     }
 
     .M_LoginSets {
-        a {
-            margin: 1rem;
-        }
+        display: flex;
+        flex-direction: row;
+        gap: 1.4rem;
+        align-items: center;
 
     }
     
@@ -39,6 +40,21 @@
         gap: 4.4rem;
         justify-content: space-between;
         padding-right: 34rem;
+        margin-left: 3rem;
+    }
+
+}
+
+.A_AccentMenu {
+    display: inline-flex;
+    padding: 0.7rem 1.3rem;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--Chernozem, #211F20);
+
+    a {
+        color: var(--Disco-Sneg, #EEF1FF);
     }
 
 }
