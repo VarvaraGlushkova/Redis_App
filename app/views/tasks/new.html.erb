@@ -1,11 +1,9 @@
 <% content_for :title, "New task" %>
 
-<h1>New task</h1>
+<div class="M_FormTitle">
+  <h1><%= @task.theme&.theme_title %></h1>
+  <p>новый таск</p>
+</div>
 
 <%= render "form", task: @task %>
 
-<br>
-
-<div>
-  <%= link_to "Back to tasks", tasks_path %>
-</div>

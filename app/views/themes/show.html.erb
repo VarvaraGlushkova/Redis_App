@@ -12,9 +12,11 @@
   )
 %>
 <div class="A_NewTask">
-  <div class="ButtonAction">
-    <%= link_to "Добавить таск", new_task_path %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="ButtonAction">
+      <%= link_to "Добавить таск", new_task_path(theme_id: @theme.id) %>
+    </div>
+    <%end%>
 </div>
 
 

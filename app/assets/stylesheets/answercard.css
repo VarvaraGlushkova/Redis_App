@@ -30,13 +30,18 @@
     overflow: hidden;
     /* grid-column: span 2; */
 
-    width: 27.5vw;
-    height: 21.41vw;
-    background: #2E2E2E;
+    height: fit-content;
+    background: var(--Disco-Sneg, #EEF1FF);
+
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
+
+.C_AnswerCard:hover {
+    background: #d6ddff;
+}
+
 
 .C_AnswerContent {
     display: flex;
@@ -50,26 +55,88 @@
     }
 }
 
-.M_AnswerTXT {
+.M_AnswerTxtContent {
+    padding: 0;
+    height: fit-content;
+
     display: flex;
-    flex-direction: column;
-    display: none;
-}
+    flex-direction: row;
+    justify-content: space-between;
 
-.A_AnswerTheme {
-    width: 5.47vw;
-    height: 2.6vw;
-    background-color: #EC2351;
-}
+    a {
+        margin-top: 5.21vw;
 
-.A_AnswerImg {
-    width: 25.42vw;
-    height: 12.24vw;
-    margin: 0 auto;
-    
+        color: var(--disco_sneg);
+        text-decoration: none;
+
+        font-family: "Golos";
+
+        font-size: 0.75rem;
+        font-style: normal;
+        font-weight: 700;
+    }
 
     img {
-        object-fit: cover;
+        width: 28px;
+        height: 28px;
+    }
+
+}
+
+.A_AnswerTitle {
+    font-family: "Golos";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--vitamin_pink, #e01067);
+
+    height: fit-content;
+    width: fit-content;
+
+    border: 3px solid var(--Vitamin-Pink, #E01067);
+    background: var(--Disco-Sneg, #EEF1FF);
+
+    padding: 9.015px 13.523px;
+    align-items: center;
+    gap: 9.015px;
+}
+
+
+.A_AnswerImg {
+    overflow: hidden;
+    /* display: flex;
+    flex-direction: row; */
+    height: 18rem;
+
+    justify-content: center;
+    align-items: center;
+
+    img {
+        /* object-fit: cover; */
         width: 100%;
+    }
+
+}
+
+.A_TaskAnswersAdd {
+    display: flex;
+    flex-direction: column;
+    height: 360px;
+    gap: 30px;
+
+    padding: 0px 196px 0px 197px;
+    justify-content: center;
+    align-items: center;
+
+    background: #F2C8DC;
+
+    a {
+        color: #E01067;
+
+        font-family: "Golos";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 11.404px;
     }
 }

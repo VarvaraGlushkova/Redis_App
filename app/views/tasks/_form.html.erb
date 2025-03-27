@@ -1,4 +1,4 @@
-<%= form_with(model: [@theme, task], local: true) do |form| %>
+<%= form_with(model: [@theme, Task.new], local: true) do |form| %>
   <% if task.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -11,24 +11,46 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+<div class="O_AnswerForm">
+  <div class="M_AnswerImgUpload">
+        <%#= form.label :answer_img, style: "display: block" %>
+    <%= form.file_field :image %>    
   </div>
 
-  <div>
-    <%= form.label :descroption, style: "display: block" %>
-    <%= form.text_field :descroption %>
-  </div>
+  <div class="M_AnswerTxTUpload">
 
-  <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.file_field :image %>
+    <div class="A_AnswerTitleField">
+      <%#= form.label :name, style: "display: block" %>
+      <%= form.text_field :name, placeholder: "Название таска" %>
+    </div>
+      
+    <div class="A_AnswerDesc">
+        <%#= form.label :descroption, style: "display: block" %>
+        <%= form.text_field :descroption, placeholder: "Описание таска" %>
+    </div>
+
+    <div class="ButtonAction">
+      <%= form.submit %>
+    </div>
+
   </div>
+</div>
+
+
+
+
+
+
   <div>
      <%= form.hidden_field :theme_id %>
   </div>
+  
   <div>
-    <%= form.submit %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
+
+  <div>
+      <%= form.hidden_field :username, value: current_user.email %>
+  </div>
+
 <% end %>

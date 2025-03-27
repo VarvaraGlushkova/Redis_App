@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     resources :profiles, only: [:new, :create, :show, :edit, :update]
   end
 
+  resources :themes do
+    resources :tasks
+  end
+
   resources :tasks do
     resources :answers
 

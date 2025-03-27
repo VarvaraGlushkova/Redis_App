@@ -1,0 +1,91 @@
+.O_AnswerForm {
+    display: flex;
+    flex-direction: row;
+
+    gap: 50px;
+
+    margin-left: 163px;
+
+    margin-top: 30px;
+
+
+}
+
+.ButtonAction {
+    width: 10rem;
+    margin-left: auto;
+
+    input {
+        width: fit-content;
+        height: fit-content;
+        padding: 0;
+        background-color: #E01067;
+
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25.466px; 
+        color: var(--Disco-Sneg, #EEF1FF);
+
+    }
+
+    a {
+
+    }
+}
+
+.A_AnswerDesc {
+    input {
+        width: 28.4rem;
+        height: 12.75rem;
+    }
+
+}
+
+.A_AnswerTitleField {
+    input {
+        width: 28.4rem;
+    }
+}
+
+.M_AnswerImgUpload {
+
+
+
+    input[type=file] {
+        width: 28.3rem;
+        height: 18.3rem;
+
+        align-content: center;
+        align-items: center;
+
+        padding: 0 10rem;
+    }
+}
+
+.M_FormTitle {
+    display: flex;
+    flex-direction: row;
+    margin-left: 163px;
+    align-items: baseline;
+
+    gap: 0.8rem;
+
+    h1 {
+        font-size: 4.75rem;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    p {
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 400;
+    }
+}
+
+.M_AnswerTxTUpload {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}

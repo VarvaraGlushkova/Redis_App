@@ -38,6 +38,17 @@ ru:
         description: "Описание"
         tag_list: "Теги"
 
+      user:
+        required: "должен быть указан" # Custom error message for the 'user' attribute
+        required: "не может быть пустым" # Fallback for the entire model
+      
+
   errors:
     messages:
       not_saved: "Не сохранено"
+      required: "обязательно для заполнения" # General fallback for 'required' errors  
+
+
+
+        
+

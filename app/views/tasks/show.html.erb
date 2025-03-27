@@ -1,12 +1,4 @@
-<p style="color: green"><%= notice %></p>
 
-
-
-<div class="O_TaskCardS">
-  <%= render @task %>
-
-
-</div>
 
 <%
   set_meta_tags(
@@ -16,8 +8,31 @@
   )
 %>
 
+
+<p style="color: green"><%= notice %></p>
+
+
+<div class="O_TaskCardS">
+  <%= render @task %>
+  <div class="M_UserTaskContent">
+    <div class="A_UserTaskName">
+      <%= @task.username %>
+    </div>
+    <div class="A_TaskDescription">
+      <%= @task.descroption %>
+    </div>
+
+    <div class="A_TaskPin">
+      <%= image_tag("icon_pin.png", alt: "Картинка сохранения") %>
+    </div>
+
+  </div>
+
+</div>
+
+
 <div>
-  <% if user_signed_in? %>
+  <% if can?(:update, @task) || can?(:destroy, @task) || current_user&.admin? %>
     <%= button_to "Destroy this task", @task, method: :delete %>
     <%= link_to "Edit this task", edit_task_path(@task) %>
   <%end%>
@@ -26,16 +41,20 @@
 <br>
 <br>
 
-<div>
-  <% if user_signed_in? %>
-    <%= link_to "Добавить редизку", new_task_answer_path(task_id: @task.id) %>
-  <%end%>
-</div>
+
 
 
 
 
 <div id="answers" class="W_TaskAnswers">
+
+  <div class="A_TaskAnswersAdd">
+  <% if user_signed_in? %>
+    <%= image_tag("upload_img.svg", alt: "Картинка сохранения") %>
+    <%= link_to "Добавить редизку", new_task_answer_path(task_id: @task.id) %>
+  <%end%>
+  </div>
+
   <% @task.answers.each do |answer| %>
     <%= render answer %>
   <% end %>

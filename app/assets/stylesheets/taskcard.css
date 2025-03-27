@@ -36,8 +36,8 @@
 
 .O_TaskCardM {
     overflow: hidden;
-
-    height: 380px;
+/* 
+    height: 380px; */
     display: flex;
     flex-direction: column;
 
@@ -92,7 +92,7 @@
     display: flex;
     flex-direction: row;
     gap: 8px;
-    height: 15.5rem;
+    height: 17rem;
 
     justify-content: center;
     align-items: center;
@@ -111,7 +111,15 @@
 .O_TaskCardS {
     display: flex;
     flex-direction: row;
+    gap: 50px;
     margin-left: 163px;
+
+
+   .M_TaskTxtContent {
+    img {
+        display: none;
+    }
+   }
 
    .A_UserNameLink {
     display: none;
@@ -133,3 +141,36 @@
 
    } 
 }
+
+.M_UserTaskContent {
+
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.A_UserTaskName {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.A_TaskDescription {
+    width: 400px;
+}
+
+.A_TaskPin {
+    margin-top: auto;
+    margin-left: 100%;
+
+    input {
+        height: 45px;
+        width: 45px;
+    }
+
+}
+
+
+/* 
+input[type=message] */
+

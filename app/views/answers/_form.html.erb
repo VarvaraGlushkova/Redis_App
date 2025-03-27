@@ -11,26 +11,42 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :user_name, style: "display: block" %>
-    <%= form.text_field :user_name %>
+  <div class="O_AnswerForm">
+
+
+    <div class="M_AnswerImgUpload">
+        <%#= form.label :answer_img, style: "display: block" %>
+        <%= form.file_field :answer_img %>
+    </div>
+
+
+    <div class="M_AnswerTxTUpload">
+
+
+      <div class="A_AnswerDesc">
+        <%#= form.label :description, style: "display: block" %>
+        <%= form.text_field :description, placeholder: "Описание редизки" %>
+      </div>
+
+      <div class="ButtonAction">
+        <%= form.submit 'Добавить редизку' %>
+      </div>
+
+    </div>
+
+
   </div>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
 
-  <div>
-    <%= form.label :answer_img, style: "display: block" %>
-    <%= form.file_field :answer_img %>
-  </div>
 
   <div>
       <%= form.hidden_field :task_id %>
   </div>
 
   <div>
-    <%= form.submit 'добавить редизку' %>
+    <%#= form.label :user_name, style: "display: block" %>
+    <%= form.hidden_field :user_name, value: current_user.email %>
   </div>
+
+
 <% end %>

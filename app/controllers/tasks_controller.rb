@@ -10,12 +10,16 @@ class TasksController < ApplicationController
   # GET /tasks/1 or /tasks/1.json
   def show
     @task = Task.find(params[:id])
+    @task = Task.includes(:theme).find(params[:id])
     @answers = @task.answers.order(created_at: :desc)
   end
 
   # GET /tasks/new
   def new
-    @task = Task.new
+    @theme = Theme.find(params[:theme_id])
+    @task = Task.new(theme_id: params[:theme_id])
+    # @task.user_id = current_user.id
+    # @task.username = current_user.email
   end
 
   # GET /tasks/1/edit
@@ -26,7 +30,8 @@ class TasksController < ApplicationController
   def create
     @theme = Theme.find(params[:theme_id])
     @task = @theme.tasks.new(task_params)
-    @task.user_id = current_user
+    @task.user_id = current_user.id
+    @task.username = current_user.email
 
     respond_to do |format|
       if @task.save
@@ -70,6 +75,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:name, :descroption, :image, :theme_id, :user_id)
+      params.require(:task).permit(:name, :descroption, :image, :theme_id, :user_id, :username)
     end
 end

@@ -1,41 +1,55 @@
+<%= link_to (answer)  do %>
+
 <div id="<%= dom_id answer %>" class="C_AnswerCard">
 
-  <div class="M_AnswerTXT">
-    <p>
-      <%= answer.user_name %>
-    </p>
-
-    <p>
-      <%= answer.description %>
-    </p>
-
-
-  </div>
-
-  <div class="C_AnswerContent">
-
-    <div class="M_AnswerTopC">
-      <div class="A_AnswerProfile">
-             <%= link_to "Show this answer", answer %>
+    <div class="M_AnswerTxtContent">
+      <div class="A_AnswerTitle">
+        REDIZ: <%#= answer.name %>
       </div>
+    
+      <%= image_tag("icon_pin.png", alt: "Картинка сохранения") %>
 
-      <div class="A_AnswerTheme">
-
-      </div>
     </div>
-
-
 
 
     <div class="A_AnswerImg">
-
-    <%= image_tag answer.answer_img.url, height: 300 %>
-
+      <%= image_tag answer.answer_img.url %>
     </div>
 
-    
-    
-  </div>
+    <div class="A_UserNameLink">
+      <%= answer.user_name %>
+    </div>
+
+
+
+  <%# <div class="M_AnswerTXT"> %>
+    <%# <p> %>
+      <%# <%= answer.user_name %>
+    <%# </p> %>
+
+    <%# <p> %>
+      <%# <%= answer.description %>
+    <%# </p> %>
+
+  <%# </div> %>
+
+  <%# <div class="C_AnswerContent"> %>
+
+    <%# <div class="M_AnswerTopC"> %>
+      <%# <div class="A_AnswerProfile"> %>
+             <%# <%= link_to "Show this answer", answer %>
+      <%# </div> %>
+
+      <%# <div class="A_AnswerTheme"> %>
+
+      <%# </div> %>
+    <%# </div> %>
+
+
+
+
+
+  <%# </div> %>
 
 
 
@@ -43,3 +57,4 @@
 
 
 </div>
+<% end %>

@@ -14,7 +14,6 @@
   <div class="M_LoginSets">
     <% if current_user %>
 
-      <%= link_to "Выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
 
 
       <div class="A_AccentMenu">
@@ -22,6 +21,8 @@
       </div>      
 
       <%= link_to "Профиль", profile_path(current_user) %>
+      <%= link_to "Выйти", destroy_user_session_path, data: { "turbo-method": :delete } %>
+
 
     <% else %>
 
