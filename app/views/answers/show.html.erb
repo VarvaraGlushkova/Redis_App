@@ -11,39 +11,63 @@
 
 
 
+<div class="M_RedizkaShow">
+  <%= render @answer %>
 
+  <div class="M_UserTaskContent">
+    <div class="A_UserTaskName">
+      <%= @answer.user_name %>
+    </div>
+    <div class="A_TaskDescription">
+      <%= @answer.description %>
+    </div>
 
-<%= render @answer %>
+    <div class="A_TaskPin">
+      <%= image_tag("icon_pin.png", alt: "Картинка сохранения") %>
+    </div>
 
+    <div>
+      <% if can?(:update, @task) || can?(:destroy, @task) || current_user&.admin? %>
+        <%= link_to "Edit this answer", edit_answer_path(@answer) %> |
+        <%= button_to "Destroy this answer", @answer, method: :delete %>
+      <%end%>
+    </div>
 
-
-  <%= link_to "Edit this answer", edit_answer_path(@answer) %> |
-  <%= link_to "Back to answers", answers_path %>
-
-  <%= button_to "Destroy this answer", @answer, method: :delete %>
+  </div>
 </div>
 
-<h2>Add a comment:</h2>
 
-<%= form_for([@answer, @answer.comments.build]) do |f| %>
-  <div class="field">
-    <%= f.label :user_name_title %><br />
-    <%= f.text_field :user_name_title %>
+
+
+
+<div class="M_CommentSubmit">
+
+  <div class="A_CommentHeader">
+    <p>Комментарии</p>
+    <hr>
   </div>
 
-  <div class="field">
-    <%= f.label :body_content %><br />
-    <%= f.text_area :body_content %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 
-  <div id="comments">
-  <% @answer.comments.each do |comment| %>
-    <%= render comment %>
-  <% end %>
+    <%= form_for([@answer, @answer.comments.build]) do |f| %>
+      <div class="field">
+        <%# поменять в контроллере а то смешно %>
+        <%= f.label :user_name_title, value: current_user.email %>
+      </div>
+
+      <div class="field">
+        <%= f.text_area :body_content %>
+      </div>
+
+      <div class="actions ButtonAction">
+        <%= f.submit %>
+      </div>
+    <% end %>
+</div>
+
+  <div id="comments" class="M_CommentSection">
+    <% @answer.comments.each do |comment| %>
+      <%= render comment %>
+    <% end %>
   </div>
-<% end %>
 

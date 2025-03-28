@@ -181,6 +181,15 @@ form.new_user {
   border: 3px solid var(--disco_sneg, #EEF1FF);
 }
 
+.M_Comment {
+  background-color: #E2E7FF;
+  padding: 8.434px 8.434px 16.867px 8.434px;
+
+  width: 616px;
+
+  margin-bottom: 13px;
+}
+
 
 @-webkit-keyframes shake-vertical {
     0%,

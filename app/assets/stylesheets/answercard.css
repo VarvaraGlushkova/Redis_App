@@ -140,3 +140,80 @@
         line-height: 11.404px;
     }
 }
+
+.M_RedizkaShow {
+    margin-left: 163px;
+
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+
+
+    .C_AnswerCard {
+        width: 900px;
+
+
+    }
+
+    .A_AnswerImg {
+        height: 23rem;
+    }
+
+    .A_UserNameLink {
+        display: none;
+    }
+
+    .M_AnswerTxtContent {
+
+        img {
+            display: none;
+        }
+    }
+}
+
+.M_CommentSubmit {
+    margin-left: 163px;
+    margin-top: 30px;
+
+    .ButtonAction {
+        margin-left: auto;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 700px;
+    }
+}
+
+.A_CommentHeader {
+
+    margin-bottom: 30px;
+
+    p {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        color: #92A5FF;
+    }
+
+    hr {
+        height: 1px;
+        border: 0px;
+        background-color: #92A5FF;
+    }
+}
+
+.M_CommentSection {
+    margin-left: 170px;
+}
+
+textarea {
+    width: 700px;
+    border: 0;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25.466px;
+    background-color: #E2E7FF;
+}

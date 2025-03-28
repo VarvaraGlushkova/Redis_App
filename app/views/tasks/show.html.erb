@@ -26,17 +26,19 @@
       <%= image_tag("icon_pin.png", alt: "Картинка сохранения") %>
     </div>
 
+    <div>
+      <% if can?(:update, @task) || can?(:destroy, @task) || current_user&.admin? %>
+        <%= button_to "Destroy this task", @task, method: :delete %>
+        <%= link_to "Edit this task", edit_task_path(@task) %>
+      <%end%>
+    </div>
+
   </div>
 
 </div>
 
 
-<div>
-  <% if can?(:update, @task) || can?(:destroy, @task) || current_user&.admin? %>
-    <%= button_to "Destroy this task", @task, method: :delete %>
-    <%= link_to "Edit this task", edit_task_path(@task) %>
-  <%end%>
-</div>
+
 
 <br>
 <br>
