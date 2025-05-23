@@ -1,17 +1,40 @@
 <div id="<%= dom_id profile %>">
-  <p>
-    <strong>Name:</strong>
-    <%= profile.name %>
-  </p>
 
-  <p>
-    <strong>Bio:</strong>
-    <%= profile.bio %>
-  </p>
+  <div class="O_ProfileHead">
 
-  <p>
-    <strong>Avatar:</strong>
-    <%= profile.avatar %>
-  </p>
+    <div class="A_ProfileAvatar">
+      <%= image_tag profile.avatar %> 
+    </div>
+
+    <div class="M_TextInfo">
+
+      <div class="A_Name">
+        @<%= profile.name %>
+      </div>
+
+
+      <div class="A_Biography">
+        <%= profile.bio %>
+      </div>
+
+    </div>
+
+    <div class="M_SubInfo">
+
+      <div>
+        <%= link_to "Edit this profile", edit_profile_path(@profile) %> |
+        <%= link_to "Back to profiles", profiles_path %>
+
+        <%= button_to "Destroy this profile", @profile, method: :delete %>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
 
 </div>
