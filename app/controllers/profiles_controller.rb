@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_profile
-  
+  before_action :authenticate_user!, :set_profile
+
   # GET /profiles or /profiles.json
   def index
     @profiles = Profile.includes(:user)
@@ -10,7 +9,8 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1 or /profiles/1.json
   def show
-    @profile = Profile.find(params[:id])
+    # @profile = Profile.find(params[:id])
+    @profile = current_user.profile
     @user = @profile.user
     @answers = @user.answers
   end
@@ -39,7 +39,7 @@ class ProfilesController < ApplicationController
     end
   end
 
-  
+
   # PATCH/PUT /profiles/1 or /profiles/1.json
   def update
     respond_to do |format|

@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_profile
-  
+
   # GET /profiles or /profiles.json
   def index
     @profiles = Profile.includes(:user)
@@ -22,7 +22,7 @@ class ProfilesController < ApplicationController
     def set_profile
       @profile = Profile.includes(
         user: [
-          :answers,
+          :answers
           # :tasks
         ]
       ).find(params[:id])
