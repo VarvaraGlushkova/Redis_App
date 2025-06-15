@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :themes
-  resources :posts
+  resources :posts, only: [:index, :show]
   resources :subscriptions
   resources :profiles
 
@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   resources :themes do
     resources :tasks
   end
+
+  resources :posts do
+    resources :tasks
+  end
+
 
   resources :tasks do
     resources :answers
@@ -83,6 +88,9 @@ Rails.application.routes.draw do
     end
     resources :answers, except: [ :index, :show ] do
       resources :comments
+    end
+
+    resources :posts
     end
   end
 

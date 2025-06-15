@@ -21,11 +21,26 @@
 
     <div class="M_SubInfo">
 
-      <div>
-        <%= link_to "Edit this profile", edit_profile_path(@profile) %> |
-        <%= link_to "Back to profiles", profiles_path %>
+      <div class="A_TaskTitle">
+        <%= link_to "Редактировать", edit_profile_path(@profile) %> 
+      </div>
 
-        <%= button_to "Destroy this profile", @profile, method: :delete %>
+      <div class="M_InfoProfile">
+        <div class="A_InfoProfile">
+          <%= @tasks.count %> <br>
+          тасок
+        </div>
+        <div class="A_InfoProfile">
+          <%= @answers.count %> <br>
+          редизок
+        </div>
+      </div>
+
+      <div class="A_DangerZone">
+        <%#  link_to "Back to profiles", profiles_path %>
+        <% if can?(:update, @profile) || can?(:destroy, @profile) || current_user&.admin? %>
+          <%= button_to "Удалить профиль", @profile, method: :delete %>
+        <% end %>
       </div>
 
     </div>
@@ -33,6 +48,11 @@
 
 
   </div>
+
+  <%# Tabs %>
+  <%= render "tabs_profile" %>
+
+
 
 
 

@@ -13,6 +13,7 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
     @user = @profile.user
     @answers = @user.answers
+    @tasks = @user.tasks
   end
 
   # GET /profiles/new

@@ -13,6 +13,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @user = @profile.user
     @answers = @user.answers
+    @tasks = @user.tasks
   end
 
 
