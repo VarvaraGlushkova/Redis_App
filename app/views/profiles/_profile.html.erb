@@ -25,6 +25,16 @@
         <%= link_to "Редактировать", edit_profile_path(@profile) %> 
       </div>
 
+      <div class="M_InfoProfile">
+        <div class="A_InfoProfile">
+          <%= @tasks.count %> <br>
+          тасок
+        </div>
+        <div class="A_InfoProfile">
+          <%= @answers.count %> <br>
+          редизок
+        </div>
+      </div>
 
       <div class="A_DangerZone">
         <%#  link_to "Back to profiles", profiles_path %>

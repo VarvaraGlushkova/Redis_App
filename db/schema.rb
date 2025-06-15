@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_03_25_215744) do
+ActiveRecord::Schema[7.2].define(version: 2025_06_15_174339) do
   create_table "answers", force: :cascade do |t|
     t.string "user_name"
     t.string "description"
@@ -48,6 +48,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_25_215744) do
     t.string "cover_img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.datetime "published_at"
   end
 
   create_table "profiles", force: :cascade do |t|

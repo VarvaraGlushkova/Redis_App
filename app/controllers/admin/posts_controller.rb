@@ -1,5 +1,6 @@
 class Admin::PostsController < ApplicationController
   load_and_authorize_resource
+  before_action :authenticate_admin!
   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /posts or /posts.json
@@ -18,11 +19,18 @@ class Admin::PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+     @post = Post.find(params[:id])
   end
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params
+    
+    if @post.save
+      redirect_to admin_posts_path, notice: "Article created"
+    else
+      render :new
+    end
 
     respond_to do |format|
       if @post.save
@@ -37,6 +45,17 @@ class Admin::PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to admin_posts_path, notice: "Article updated"
+    else
+      render :edit
+    end
+
+
+
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: "Post was successfully updated." }
@@ -60,12 +79,18 @@ class Admin::PostsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def authenticate_admin!
+      # Здесь предполагается, что у тебя есть current_user и admin-флаг
+      redirect_to root_path unless current_user&.admin?
+    end
+    
     def set_post
       @post = Post.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :cover_img)
+      params.require(:post).permit(:title, :slug, :published_at, :cover_image, :content)
     end
 end
