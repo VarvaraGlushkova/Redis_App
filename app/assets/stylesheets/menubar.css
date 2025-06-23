@@ -42,6 +42,7 @@
         padding-right: 34rem;
         margin-left: 3rem;
     }
+  
 
 }
 
@@ -57,4 +58,61 @@
         color: var(--Disco-Sneg, #EEF1FF);
     }
 
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* Hamburger icon */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-icon span {
+  width: 25px;
+  height: 3px;
+  background: var(--chernozem, #211F20);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Drawer (hidden by default) */
+.menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 75%;
+  max-width: 320px;
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 1000;
+}
+
+/* Open drawer when checkbox is checked */
+.menu-toggle:checked ~ .menu-icon + .menu-drawer {
+  transform: translateX(0);
+}
+
+/* Desktop-visible classes */
+.desktop-only {
+  display: flex;
+}
+
+/* Mobile-only by default */
+.menu-icon,
+.menu-drawer,
+.menu-overlay {
+  display: none;
 }

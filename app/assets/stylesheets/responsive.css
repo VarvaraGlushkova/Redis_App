@@ -1,0 +1,211 @@
+/* //PHONE */
+@media all and (max-width:428px) {
+    body {
+        margin: 30px 20px;
+    }
+    * {
+        scroll-behavior: smooth;
+    }
+
+    /* MENUBAR */
+
+      .M_Menubar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .M_LinksHeader,
+  .M_LoginSets {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 0;
+    margin: 0;
+
+  }
+
+  .M_LinksHeader {
+    margin-left: 0;
+    padding-right: 0;
+  }
+
+    /* .M_Menubar {
+        margin-top: 1rem;
+
+        .M_LinksHeader, .M_LoginSets {
+            flex-direction: column;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 3rem;
+            height: 2rem;
+        }
+    } */
+
+
+
+
+
+    /* FOOTER */
+
+    .W_Footer {
+        
+        margin-left: 0;
+        margin-bottom: 0;
+
+        .A_Made_By {
+
+            p {
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 21.487px;            
+            }
+
+        }
+
+        .A_Smm, .A_Curated_By, .M_Additional {
+            display: none;
+        }
+
+        .M_Infoblock, .A_Made_By {
+            gap: 0;
+        }
+
+
+
+        .A_FooterLogo {
+            width: fit-content;
+
+            img {
+                width: 212px;
+                height: 124.869px;
+            }
+        }
+    }
+
+    /* LOGIN SCREEN */
+    .M_WelcomeLogin {
+
+        h2{
+            margin-top: 1.5rem;
+            font-size: 1.6rem;
+            font-style: normal;
+            margin-bottom: 3.8rem;
+        }
+
+        h4 {
+            margin: 0 auto;
+            text-align: center;
+            width: 17rem;
+            line-height: 1.2rem;
+            font-size: 1rem;
+            font-style: normal;
+        }
+
+        p {
+            display: none;
+        }
+
+    }
+
+    form.new_user {
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 4rem;
+        display: flex;
+        gap: 18px;
+        flex-direction: column;
+    }
+
+    .A_LoginForm {
+        margin: 0 auto;
+
+        input {
+            width: 268px;
+        }
+
+    }
+
+    .A_DivideLine {
+        padding: 0 2rem;
+        gap: 1rem;
+    }
+
+
+
+}
+
+/* //TABLET PORTRAIT */
+@media all and (max-width:834px) {
+
+  .M_Menubar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+
+    .menu-icon {
+    display: flex;
+  }
+
+  .menu-content {
+    display: none;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .menu-toggle:checked + .menu-icon + .menu-content {
+    display: flex;
+  }
+
+  .M_LinksHeader, .M_LoginSets {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+    align-items: start;
+
+    a{
+        font-size: 1.4rem;
+    }
+  }
+
+  .M_LinksHeader {
+    padding-right: 0;
+    margin-left: 0;
+  }
+  }
+
+  .menu-icon,
+  .menu-drawer,
+  .menu-overlay {
+    display: block;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .M_Menubar {
+    padding: 1rem;
+    flex-direction: row;
+  }
+
+  
+
+}
+
+/* //TABLET LANDSCAPE */
+@media all and (max-width:1196px) {
+
+}
