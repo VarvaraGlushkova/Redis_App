@@ -1,0 +1,40 @@
+<div class="S_TabsProfile"
+  data-controller="tabs"
+  data-tabs-active-class="bg-stone-900 text-stone-100"
+  data-tabs-default-tab-value="tab1"
+ >
+  <!-- buttons to toggle between tabs -->
+  <div class="O_TabsProfile">
+    <button class="A_Tab" id="tab1" data-tabs-target="btn" data-action="click->tabs#select">Таски</button>
+    <button class="A_Tab" id="tab2" data-tabs-target="btn" data-action="click->tabs#select">Редизки</button>
+    <button class="A_Tab" id="tab3" data-tabs-target="btn" data-action="click->tabs#select">Сохраненные</button>
+  </div>
+
+  <!-- the tabs -->
+  <div class="O_TabContent">
+    <div data-tabs-target="tab" id="tab1">
+    <div class="C_MainContainer">
+        <% @tasks.each do |task| %>
+        <%= render task %>
+        <% end %>
+    </div>       
+    </div>
+
+    <div data-tabs-target="tab" id="tab2" class='hidden'>
+      <div id="answers" class="W_TaskAnswers">
+        <% @answers.each do |answer| %>
+          <%= render answer %>
+        <% end %>
+      </div>
+
+    </div>  
+
+
+      
+    <div data-tabs-target="tab" id="tab3" class='hidden'>
+
+    </div>
+
+
+  </div>
+</div>
